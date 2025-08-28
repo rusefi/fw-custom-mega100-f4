@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="23776">
+    <page number="0" size="23804">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0250827E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0250828E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -4626,7 +4626,6 @@ end</constant>
         <constant name="unusedFancy17">"false"</constant>
         <constant name="unusedFancy18">"false"</constant>
         <constant name="unusedFancy19">"false"</constant>
-        <constant name="unusedFancy2">"false"</constant>
         <constant name="unusedFancy20">"false"</constant>
         <constant name="unusedFancy21">"false"</constant>
         <constant name="unusedFancy22">"false"</constant>
@@ -4992,6 +4991,18 @@ end</constant>
         <constant digits="0" name="vssFilterReciprocal" units="">3.0</constant>
         <constant digits="3" name="vssGearRatio" units="ratio">3.73</constant>
         <constant digits="0" name="vssToothCount" units="count">21.0</constant>
+        <constant name="vvlControlEnabled">"false"</constant>
+        <constant digits="0" name="vvlController_activationRpm" units="rpm">0.0</constant>
+        <constant digits="0" name="vvlController_deactivationRpm" units="rpm">0.0</constant>
+        <constant digits="0" name="vvlController_deactivationRpmWindow" units="rpm">0.0</constant>
+        <constant digits="0" name="vvlController_fuelAdderPercent" units="%">0.0</constant>
+        <constant digits="2" name="vvlController_ignitionRetard" units="deg">0.0</constant>
+        <constant digits="1" name="vvlController_maximumAfr" units="afr">0.0</constant>
+        <constant digits="0" name="vvlController_maximumMap" units="kPa">0.0</constant>
+        <constant digits="0" name="vvlController_minimumClt" units="C">0.0</constant>
+        <constant digits="0" name="vvlController_minimumTps" units="">0.0</constant>
+        <constant name="vvlRelayPin">"NONE"</constant>
+        <constant name="vvlRelayPinMode">"default"</constant>
         <constant digits="0" name="vvtActivationDelayMs" units="ms">6000.0</constant>
         <constant name="vvtBooleanForVerySpecialCases">"false"</constant>
         <constant digits="0" name="vvtControlMinClt" units="C">0.0</constant>
@@ -5137,8 +5148,8 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250817" nPages="1" signature="rusEFI main.2025.08.27.mega100.188381791" version="5.0"/>
-    <bibliography author="rusEFI 20250817" writeDate="date"/>
+    <versionInfo firmwareInfo="20250827" nPages="1" signature="rusEFI main.2025.08.28.mega100.2177786739" version="5.0"/>
+    <bibliography author="rusEFI 20250827" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
