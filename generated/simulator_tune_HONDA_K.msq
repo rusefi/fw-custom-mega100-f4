@@ -15,7 +15,7 @@
         <constant digits="2" name="acPressure_v2" units="volts">5.0</constant>
         <constant digits="2" name="acPressure_value1" units="">0.0</constant>
         <constant digits="2" name="acPressure_value2" units="">100.0</constant>
-        <constant digits="1" name="acPressureEnableHyst" units="kPa (absolute)">10.0</constant>
+        <constant digits="1" name="acPressureEnableHyst" units="kPa">10.0</constant>
         <constant digits="0" name="acrDisablePhase" units="deg">0.0</constant>
         <constant digits="0" name="acRelayAlternatorDutyAdder" units="%">0.0</constant>
         <constant name="acRelayPin">"NONE"</constant>
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0250828E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0250829E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -5148,7 +5148,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250827" nPages="1" signature="rusEFI main.2025.08.28.mega100.2177786739" version="5.0"/>
+    <versionInfo firmwareInfo="20250827" nPages="1" signature="rusEFI main.2025.08.29.mega100.160040670" version="5.0"/>
     <bibliography author="rusEFI 20250827" writeDate="date"/>
     <settings/>
     <userComments/>
