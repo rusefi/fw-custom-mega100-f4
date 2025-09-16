@@ -185,7 +185,7 @@
         <constant digits="2" name="analogInputDividerCoefficient" units="coef">2.0</constant>
         <constant digits="0" name="anotherCiTest" units="">0.0</constant>
         <constant name="antiLagActivationMode">"Switch Input"</constant>
-        <constant name="antiLagEnabled">"false"</constant>
+        <constant name="antiLagEnabled">"disabled"</constant>
         <constant digits="3" name="applyNonlinearBelowPulse" units="ms">0.0</constant>
         <constant name="artificialTestMisfire">"No thank you"</constant>
         <constant name="auxAnalogInputs1">"Disabled"</constant>
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0250915E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0250916E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -989,9 +989,9 @@
         <constant name="enableKline">"false"</constant>
         <constant name="enableKnockSpectrogram">"no"</constant>
         <constant name="enableKnockSpectrogramFilter">"false"</constant>
-        <constant name="enableLaunchRetard">"false"</constant>
+        <constant name="enableLaunchRetard">"no"</constant>
         <constant name="enableOilPressureProtect">"false"</constant>
-        <constant name="enableSoftwareKnock">"false"</constant>
+        <constant name="enableSoftwareKnock">"disabled"</constant>
         <constant name="enableStagedInjection">"false"</constant>
         <constant name="enableTrailingSparks">"false"</constant>
         <constant name="enableVerboseCanTx">"false"</constant>
@@ -1076,14 +1076,14 @@
         <constant name="firingOrder">"1-3-4-2"</constant>
         <constant digits="0" name="fixedModeTiming" units="RPM">50.0</constant>
         <constant digits="2" name="fixedTiming" units="deg">0.0</constant>
-        <constant name="flexCranking">"false"</constant>
+        <constant name="flexCranking">"disabled"</constant>
         <constant name="flexSensorInverted">"Normal"</constant>
         <constant name="flexSensorPin">"NONE"</constant>
         <constant name="forceO2Heating">"no"</constant>
         <constant digits="3" name="fordInjectorSmallPulseBreakPoint" units="mg">0.0</constant>
         <constant digits="3" name="fordInjectorSmallPulseSlope" units="g/s">0.0</constant>
         <constant name="fuelAlgorithm">"Speed Density"</constant>
-        <constant name="fuelClosedLoopCorrectionEnabled">"false"</constant>
+        <constant name="fuelClosedLoopCorrectionEnabled">"disabled"</constant>
         <constant name="FuelHighPressureSentInput">"None"</constant>
         <constant name="FuelHighPressureSentType">"None"</constant>
         <constant digits="4" name="fuelLevelAveragingAlpha" units="">0.001</constant>
@@ -2400,16 +2400,16 @@
         <constant name="is_enabled_spi_5">"false"</constant>
         <constant name="is_enabled_spi_6">"false"</constant>
         <constant name="isAlternatorControlEnabled">"false"</constant>
-        <constant name="isBoostControlEnabled">"false"</constant>
-        <constant name="isCylinderCleanupEnabled">"true"</constant>
+        <constant name="isBoostControlEnabled">"disabled"</constant>
+        <constant name="isCylinderCleanupEnabled">"enabled"</constant>
         <constant name="isDoubleSolenoidIdle">"false"</constant>
-        <constant name="isFasterEngineSpinUpEnabled">"true"</constant>
+        <constant name="isFasterEngineSpinUpEnabled">"enabled"</constant>
         <constant name="isForcedInduction">"false"</constant>
-        <constant name="isIgnitionEnabled">"true"</constant>
-        <constant name="isInjectionEnabled">"true"</constant>
-        <constant name="isMapAveragingEnabled">"true"</constant>
+        <constant name="isIgnitionEnabled">"enabled"</constant>
+        <constant name="isInjectionEnabled">"enabled"</constant>
+        <constant name="isMapAveragingEnabled">"enabled"</constant>
         <constant name="isPhaseSyncRequiredForIgnition">"false"</constant>
-        <constant name="isSdCardEnabled">"false"</constant>
+        <constant name="isSdCardEnabled">"disabled"</constant>
         <constant digits="0" name="issFilterReciprocal" units="">2.0</constant>
         <constant name="isWaveAnalyzerEnabled">"true"</constant>
         <constant digits="0" name="justATempTest" units="">0.0</constant>
@@ -2565,11 +2565,11 @@
         <constant name="launchControlEnabled">"disabled"</constant>
         <constant digits="0" name="launchCorrectionsEndRpm" units="">0.0</constant>
         <constant digits="0" name="launchFuelAdderPercent" units="%">0.0</constant>
-        <constant name="launchFuelCutEnable">"false"</constant>
+        <constant name="launchFuelCutEnable">"no"</constant>
         <constant digits="0" name="launchRpm" units="rpm">3000.0</constant>
         <constant digits="0" name="launchRpmWindow" units="RPM">500.0</constant>
         <constant name="launchSmoothRetard">"false"</constant>
-        <constant name="launchSparkCutEnable">"false"</constant>
+        <constant name="launchSparkCutEnable">"no"</constant>
         <constant digits="0" name="launchSpeedThreshold" units="kmh">30.0</constant>
         <constant digits="2" name="launchTimingRetard" units="deg">0.0</constant>
         <constant digits="0" name="launchTpsThreshold" units="">0.0</constant>
@@ -2981,7 +2981,7 @@ end</constant>
         <constant digits="2" name="multisparkSparkDuration" units="ms">1.0</constant>
         <constant digits="0" name="nitrousActivationRpm" units="rpm">4000.0</constant>
         <constant name="nitrousControlArmingMethod">"Digital Switch Input"</constant>
-        <constant name="nitrousControlEnabled">"false"</constant>
+        <constant name="nitrousControlEnabled">"disabled"</constant>
         <constant name="nitrousControlTriggerPin">"NONE"</constant>
         <constant name="nitrousControlTriggerPinMode">"DEFAULT"</constant>
         <constant digits="0" name="nitrousDeactivationRpm" units="rpm">7000.0</constant>
@@ -3516,7 +3516,7 @@ end</constant>
         <constant digits="0" name="stft_minClt" units="C">60.0</constant>
         <constant digits="0" name="stft_minPowerLoad" units="load">85.0</constant>
         <constant digits="0" name="stft_startupDelay" units="seconds">60.0</constant>
-        <constant name="stftIgnoreErrorMagnitude">"false"</constant>
+        <constant name="stftIgnoreErrorMagnitude">"no"</constant>
         <constant digits="1" name="stoichRatioPrimary" units=":1">14.7</constant>
         <constant digits="1" name="stoichRatioSecondary" units=":1">9.0</constant>
         <constant name="tachOutputPin">"NONE"</constant>
@@ -4481,7 +4481,7 @@ end</constant>
         <constant name="unusedFancy8">"false"</constant>
         <constant name="unusedFancy9">"false"</constant>
         <constant name="unusedFlipWboChannels">"false"</constant>
-        <constant name="useAdvanceCorrectionsForCranking">"false"</constant>
+        <constant name="useAdvanceCorrectionsForCranking">"no"</constant>
         <constant name="useAuxSpeedForSlipRatio">"false"</constant>
         <constant name="useBiQuadOnAuxSpeedSensors">"false"</constant>
         <constant name="useCicPidForIdle">"false"</constant>
@@ -4493,8 +4493,8 @@ end</constant>
         <constant name="useHardSkipInTraction">"false"</constant>
         <constant name="useHbridgesToDriveIdleStepper">"false"</constant>
         <constant name="useIacPidMultTable">"false"</constant>
-        <constant name="useIacTableForCoasting">"false"</constant>
-        <constant name="useIdleAdvanceWhileCoasting">"false"</constant>
+        <constant name="useIacTableForCoasting">"disabled"</constant>
+        <constant name="useIdleAdvanceWhileCoasting">"no"</constant>
         <constant name="useIdleTimingPidControl">"false"</constant>
         <constant name="useInjectorFlowLinearizationTable">"false"</constant>
         <constant name="useLinearCltSensor">"false"</constant>
@@ -4504,9 +4504,9 @@ end</constant>
         <constant name="useRunningMathForCranking">"Fuel Map"</constant>
         <constant name="usescriptTableForCanSniffingFiltering">"false"</constant>
         <constant name="useSeparateAdvanceForCranking">"Fixed (auto taper)"</constant>
-        <constant name="useSeparateAdvanceForIdle">"false"</constant>
-        <constant name="useSeparateIdleTablesForCrankingTaper">"false"</constant>
-        <constant name="useSeparateVeForIdle">"false"</constant>
+        <constant name="useSeparateAdvanceForIdle">"disabled"</constant>
+        <constant name="useSeparateIdleTablesForCrankingTaper">"disabled"</constant>
+        <constant name="useSeparateVeForIdle">"disabled"</constant>
         <constant name="useSpiImu">"false"</constant>
         <constant name="useStepperIdle">"false"</constant>
         <constant name="useTLE8888_cranking_hack">"true"</constant>
@@ -4825,7 +4825,7 @@ end</constant>
         <constant digits="0" name="vssFilterReciprocal" units="">3.0</constant>
         <constant digits="3" name="vssGearRatio" units="ratio">3.73</constant>
         <constant digits="0" name="vssToothCount" units="count">21.0</constant>
-        <constant name="vvlControlEnabled">"false"</constant>
+        <constant name="vvlControlEnabled">"disabled"</constant>
         <constant digits="0" name="vvlController_activationRpm" units="rpm">0.0</constant>
         <constant digits="0" name="vvlController_deactivationRpm" units="rpm">0.0</constant>
         <constant digits="0" name="vvlController_deactivationRpmWindow" units="rpm">0.0</constant>
@@ -4982,7 +4982,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250913" nPages="1" signature="rusEFI main.2025.09.15.mega100.3869532862" version="5.0"/>
+    <versionInfo firmwareInfo="20250913" nPages="1" signature="rusEFI main.2025.09.16.mega100.3478401645" version="5.0"/>
     <bibliography author="rusEFI 20250913" writeDate="date"/>
     <settings/>
     <userComments/>
