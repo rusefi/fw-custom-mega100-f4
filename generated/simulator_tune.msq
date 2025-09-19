@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="23804">
+    <page number="0" size="23808">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0.0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">2.0250917E7</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0250918E7</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">2.0250918E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0250919E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -2851,7 +2851,6 @@ end</constant>
         <constant digits="2" name="mapHighValueVoltage" units="v">5.0</constant>
         <constant digits="2" name="mapLowValueVoltage" units="v">0.0</constant>
         <constant digits="0" name="mapMinBufferLength" units="count">1.0</constant>
-        <constant digits="2" name="mapPredictionBlendDuration" units="s">0.0</constant>
         <constant digits="0" name="mapSyncThreshold" units="kPa">0.0</constant>
         <constant name="max31855_cs1">"NONE"</constant>
         <constant name="max31855_cs2">"NONE"</constant>
@@ -3073,6 +3072,18 @@ end</constant>
 </constant>
         <constant digits="1" name="ppsExpAverageAlpha" units="percent">100.0</constant>
         <constant digits="1" name="ppsSecondaryMaximum" units="%">0.0</constant>
+        <constant cols="1" digits="0" name="predictiveMapBlendDurationBins" rows="4" units="RPM">
+         650.0
+         800.0
+         3750.0
+         7000.0
+</constant>
+        <constant cols="1" digits="2" name="predictiveMapBlendDurationValues" rows="4" units="second">
+         1.0
+         1.0
+         1.0
+         1.0
+</constant>
         <constant cols="1" digits="0" name="primeBins" rows="8" units="C">
          -40.0
          -20.0
@@ -4980,7 +4991,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250913" nPages="1" signature="rusEFI main.2025.09.18.mega100.485348499" version="5.0"/>
+    <versionInfo firmwareInfo="20250913" nPages="1" signature="rusEFI main.2025.09.19.mega100.239859996" version="5.0"/>
     <bibliography author="rusEFI 20250913" writeDate="date"/>
     <settings/>
     <userComments/>
