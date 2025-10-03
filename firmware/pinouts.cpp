@@ -28,7 +28,11 @@ static void setBoard_ua4c_pinout() {
 
 }
 
-/*PUBLIC_API_WEAK*/ void boardTsAction(uint16_t index) {
+void customBoardTsAction(uint16_t subSystem, uint16_t index) {
+    if (subSystem != (uint16_t)TS_BOARD_ACTION) {
+        return;
+    }
+
     if (index == 0) {
         setBoard_04_pinout();
     } else if (index == 1) {
