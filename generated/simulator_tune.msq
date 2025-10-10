@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0.0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">2.0251008E7</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0251009E7</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">2.0251009E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.025101E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -4275,7 +4275,7 @@ end</constant>
         <constant digits="2" name="tpsMax" units="V">4.882813</constant>
         <constant digits="2" name="tpsMin" units="V">0.0</constant>
         <constant digits="1" name="tpsSecondaryMaximum" units="%">0.0</constant>
-        <constant cols="1" digits="2" name="tpsTpsAccelFromRpmBins" rows="8" units="from">
+        <constant cols="1" digits="2" name="tpsTpsAccelFromRpmBins" rows="8" units="%">
          0.0
          10.0
          30.0
@@ -4295,7 +4295,7 @@ end</constant>
          35.0 32.0 28.0 23.0 17.0 10.0 0.0 0.0
          37.0 35.0 32.0 28.0 23.0 17.0 10.0 0.0
 </constant>
-        <constant cols="1" digits="2" name="tpsTpsAccelToRpmBins" rows="8" units="to">
+        <constant cols="1" digits="2" name="tpsTpsAccelToRpmBins" rows="8" units="%">
          0.0
          10.0
          30.0
@@ -4991,7 +4991,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20251001" nPages="1" signature="rusEFI main.2025.10.09.mega100.1842122498" version="5.0"/>
+    <versionInfo firmwareInfo="20251001" nPages="1" signature="rusEFI main.2025.10.10.mega100.2721636970" version="5.0"/>
     <bibliography author="rusEFI 20251001" writeDate="date"/>
     <settings/>
     <userComments/>
