@@ -280,7 +280,6 @@
 #define can_wbo_type_e_DISABLED 2
 #define can_wbo_type_e_enum "RusEFI", "AEM X-series", "Disabled/Analog"
 #define can_wbo_type_e_RUSEFI 0
-#define CANBUS_COUNT 2
 #define CanGpioType_auto_enum 0="NONE",1="DRT",2="MS"
 #define CanGpioType_DRT 1
 #define CanGpioType_enum "None", "DRT protocol", "MS protocol"
@@ -467,6 +466,8 @@
 #define DYNO_SAE_RELATIVE_HUMIDITY_UNITS "%"
 #define DYNO_SAE_TEMPERATURE_C_TOOLTIP "Air temperature"
 #define DYNO_SAE_TEMPERATURE_C_UNITS "C"
+#define EFI_CAN_BUS_COUNT 2
+#define EFI_CAN_CANFD FALSE
 #define ego_sensor_e_auto_enum 0="ES_BPSX_D1",2="ES_14Point7_Free",6="ES_AEM",5="ES_Custom",1="ES_Innovate_MTX_L",4="ES_PLX"
 #define ego_sensor_e_enum "BPSX", "Innovate", "14Point7", "INVALID", "PLX", "Custom", "AEM"
 #define ego_sensor_e_ES_14Point7_Free 2
@@ -1534,7 +1535,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 2721636970
+#define SIGNATURE_HASH 4066815325
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -2101,7 +2102,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2025.10.11.mega100.2721636970"
+#define TS_SIGNATURE "rusEFI main.2025.10.12.mega100.4066815325"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
