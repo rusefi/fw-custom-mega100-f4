@@ -1541,7 +1541,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 813868097
+#define SIGNATURE_HASH 2892932585
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1759,8 +1759,6 @@
 #define ts_14_command_COMMAND_X14_UNUSED_1 0x01
 #define ts_14_command_COMMAND_X14_UNUSED_15 0x15
 #define ts_14_command_COMMAND_X14_UNUSED_2 0x02
-#define ts_14_command_COMMAND_X14_UNUSED_3 0x03
-#define ts_14_command_COMMAND_X14_UNUSED_4 0x04
 #define ts_14_command_TS_ETB_AUTOCAL_0 0x0E
 #define ts_14_command_TS_ETB_AUTOCAL_0_FAST 0x1C
 #define ts_14_command_TS_ETB_AUTOCAL_1 0x11
@@ -1785,6 +1783,8 @@
 #define ts_14_command_TS_SD_UNMOUNT 0x19
 #define ts_14_command_TS_SET_STEPPER_IDLE 0x05
 #define ts_14_command_TS_START_STOP_ENGINE 0x09
+#define ts_14_command_TS_TCU_DOWNSHIFT_REQUEST 0x04
+#define ts_14_command_TS_TCU_UPSHIFT_REQUEST 0x03
 #define ts_14_command_TS_TRIGGER_STIMULATOR_DISABLE 0x0F
 #define ts_14_command_TS_TRIGGER_STIMULATOR_ENABLE 0x0D
 #define ts_14_command_TS_WIDEBAND_UPDATE 0x12
@@ -1919,6 +1919,7 @@
 #define ts_show_can_weird true
 #define ts_show_charge_estimation true
 #define ts_show_check_engine false
+#define ts_show_clt true
 #define ts_show_clt_iat_pullup true
 #define ts_show_clutch_down true
 #define ts_show_clutch_down_pin true
@@ -1965,6 +1966,7 @@
 #define ts_show_exhaust_vvt true
 #define ts_show_experimental true
 #define ts_show_fan2_settings true
+#define ts_show_fan_settings true
 #define ts_show_faster_spin_up true
 #define ts_show_final_ratio true
 #define ts_show_firing_order true
@@ -2128,7 +2130,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2025.11.20.mega100.813868097"
+#define TS_SIGNATURE "rusEFI main.2025.11.21.mega100.2892932585"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
