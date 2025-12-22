@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0251221E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0251222E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -4892,7 +4892,6 @@ end</constant>
          127.6 127.6 127.6 127.6 127.6 127.6 127.6 126.5 126.3 126.7 127.6 127.6 127.6 127.6 127.6 127.6
          127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6 127.6
 </constant>
-        <constant name="vinIsEmpty">"false"</constant>
         <constant name="vRefAdcChannel">"Disabled"</constant>
         <constant name="vrThreshold1_pin">"NONE"</constant>
         <constant cols="1" digits="0" name="vrThreshold1_rpmBins" rows="6" units="rpm">
@@ -5089,7 +5088,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20251209" nPages="1" signature="rusEFI main.2025.12.21.mega100.2876500682" version="5.0"/>
+    <versionInfo firmwareInfo="20251209" nPages="1" signature="rusEFI main.2025.12.22.mega100.1324115191" version="5.0"/>
     <bibliography author="rusEFI 20251209" writeDate="date"/>
     <settings/>
     <userComments/>
