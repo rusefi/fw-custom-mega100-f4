@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0.0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">2.0260106E7</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0260107E7</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">2.0260107E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0260108E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -2039,14 +2039,14 @@
          140.0
 </constant>
         <constant cols="8" digits="1" name="ignitionIatCorrTable" rows="8" units="deg">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
+         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
          0.0 0.0 0.0 0.0 0.0 0.0 -1.0 -2.0
-         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
-         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
-         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
-         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
-         0.0 0.0 0.0 0.0 0.0 -1.0 -2.0 -3.0
 </constant>
         <constant cols="1" digits="0" name="ignitionIatCorrTempBins" rows="8" units="C">
          -40.0
@@ -4993,7 +4993,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260101" nPages="1" signature="rusEFI main.2026.01.07.mega100.256149173" version="5.0"/>
+    <versionInfo firmwareInfo="20260101" nPages="1" signature="rusEFI main.2026.01.08.mega100.4231624317" version="5.0"/>
     <bibliography author="rusEFI 20260101" writeDate="date"/>
     <settings/>
     <userComments/>
