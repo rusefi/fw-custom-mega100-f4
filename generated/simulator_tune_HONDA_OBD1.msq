@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="23848">
+    <page number="0" size="23856">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.0260124E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0260125E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -3116,6 +3116,7 @@ end</constant>
         <constant name="rotationalIdleController_auto_engage">"disabled"</constant>
         <constant digits="0" name="rotationalIdleController_auto_engage_clt" units="C">0.0</constant>
         <constant name="rotationalIdleController_auto_engage_clt_enable">"disabled"</constant>
+        <constant name="rotationalIdleController_cut_mode">"Spark"</constant>
         <constant name="rotationalIdleController_enabled">"disabled"</constant>
         <constant digits="0" name="rotationalIdleController_max_tps" units="%TPS">0.0</constant>
         <constant digits="0" name="rpmHardLimit" units="rpm">7000.0</constant>
@@ -5002,7 +5003,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260115" nPages="1" signature="rusEFI main.2026.01.24.mega100.1031780784" version="5.0"/>
+    <versionInfo firmwareInfo="20260115" nPages="1" signature="rusEFI main.2026.01.25.mega100.3200555072" version="5.0"/>
     <bibliography author="rusEFI 20260115" writeDate="date"/>
     <settings/>
     <userComments/>
