@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260310</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260314</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -5089,8 +5089,8 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260309" nPages="1" signature="rusEFI main.2026.03.10.mega100.2930044606" version="5.0"/>
-    <bibliography author="rusEFI 20260309" writeDate="date"/>
+    <versionInfo firmwareInfo="20260312" nPages="1" signature="rusEFI main.2026.03.14.mega100.981602513" version="5.0"/>
+    <bibliography author="rusEFI 20260312" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
