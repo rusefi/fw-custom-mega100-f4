@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="23892">
+    <page number="0" size="24336">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260419</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260420</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -2513,6 +2513,118 @@
         <constant digits="1" name="knockFuelTrim" units="%">0.0</constant>
         <constant digits="1" name="knockFuelTrimAggression" units="%">0.0</constant>
         <constant digits="1" name="knockFuelTrimReapplyRate" units="1%/s">0.0</constant>
+        <constant cols="1" digits="0" name="knockGainLoadBins" rows="6" units="">
+         0
+         20
+         40
+         60
+         80
+         100
+</constant>
+        <constant cols="1" digits="0" name="knockGainRpmBins" rows="6" units="RPM">
+         700
+         800
+         2200
+         3600
+         5000
+         7000
+</constant>
+        <constant cols="6" digits="0" name="knockGains10_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains11_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains12_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains1_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains2_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains3_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains4_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains5_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains6_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains7_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains8_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
+        <constant cols="6" digits="0" name="knockGains9_table" rows="6" units="dB">
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+         0 0 0 0 0 0
+</constant>
         <constant cols="1" digits="0" name="knockNoiseRpmBins" rows="16" units="RPM">
          650
          800
@@ -5117,7 +5229,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="202604017" nPages="1" signature="rusEFI main.2026.04.19.mega100.844911048" version="5.0"/>
+    <versionInfo firmwareInfo="202604017" nPages="1" signature="rusEFI main.2026.04.20.mega100.2307784511" version="5.0"/>
     <bibliography author="rusEFI 202604017" writeDate="date"/>
     <settings/>
     <userComments/>
