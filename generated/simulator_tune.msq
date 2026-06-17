@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="24344">
+    <page number="0" size="24360">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">20260615</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260616</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">20260616</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260617</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -3593,10 +3593,19 @@ end</constant>
          5350
          7000
 </constant>
+        <constant name="sdCardConditionalLogging">"disabled"</constant>
         <constant name="sdCardCsPin">"NONE"</constant>
         <constant name="sdCardCsPinMode">"default"</constant>
         <constant digits="0" name="sdCardLogFrequency" units="hz">50</constant>
         <constant name="sdCardSpiDevice">"Off"</constant>
+        <constant digits="0" name="sdLogMinMap" units="kPa">0</constant>
+        <constant digits="0" name="sdLogMinTps" units="%">0</constant>
+        <constant digits="0" name="sdLogMinVss" units="kph">0</constant>
+        <constant digits="0" name="sdLogStartRpm" units="rpm">0</constant>
+        <constant digits="0" name="sdLogStopDelay" units="sec">0</constant>
+        <constant digits="0" name="sdLogStopRpm" units="rpm">0</constant>
+        <constant name="sdLogTriggerPin">"NONE"</constant>
+        <constant name="sdLogTriggerPinMode">"DEFAULT"</constant>
         <constant name="sdTriggerLog">"Full MLG"</constant>
         <constant name="sdTriggerLogCsv">"Binary"</constant>
         <constant name="secondaryInjectorCompensationMode">"None"</constant>
@@ -5141,8 +5150,8 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260510" nPages="1" signature="rusEFI main.2026.06.16.mega100.2125479948" version="5.0"/>
-    <bibliography author="rusEFI 20260510" writeDate="date"/>
+    <versionInfo firmwareInfo="20260616" nPages="1" signature="rusEFI main.2026.06.17.mega100.463815808" version="5.0"/>
+    <bibliography author="rusEFI 20260616" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
