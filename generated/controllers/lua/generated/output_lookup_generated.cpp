@@ -751,6 +751,9 @@ float getOutputValueByHash(const int hash) {
 // isMapPredictionActive
 		case 884518764:
 			return engine->outputChannels.isMapPredictionActive;
+// isFlexError
+		case 43207706:
+			return engine->outputChannels.isFlexError;
 // outputRequestPeriod
 		case 1894184322:
 			return engine->outputChannels.outputRequestPeriod;
@@ -1497,6 +1500,32 @@ float getOutputValueByHash(const int hash) {
 // isNitrousCondition
 		case -454003684:
 			return engine->module<NitrousController>()->isNitrousCondition;
+#endif
+#if EFI_MISFIRE_DETECTION
+// misfireDetectionActive
+		case 1980253487:
+			return engine->module<MisfireController>()->misfireDetectionActive;
+// misfireLatched
+		case 385260457:
+			return engine->module<MisfireController>()->misfireLatched;
+// misfireTotalCount
+		case 2130189985:
+			return engine->module<MisfireController>()->misfireTotalCount;
+// misfireEmaUs
+		case 1057331407:
+			return engine->module<MisfireController>()->misfireEmaUs;
+// misfireLastSegUs
+		case -1971271249:
+			return engine->module<MisfireController>()->misfireLastSegUs;
+// misfireThreshUs
+		case 1848662122:
+			return engine->module<MisfireController>()->misfireThreshUs;
+// misfireWobbleUs
+		case 675334487:
+			return engine->module<MisfireController>()->misfireWobbleUs;
+// misfireWobbleThreshUs
+		case -783525499:
+			return engine->module<MisfireController>()->misfireWobbleThreshUs;
 #endif
 #if EFI_PROD_CODE && EFI_ELECTRONIC_THROTTLE_BODY && FULL_SD_LOGS
 // etb1etbCurrentTarget
