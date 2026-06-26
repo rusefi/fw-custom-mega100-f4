@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="24620">
+    <page number="0" size="16620">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">20260624</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260625</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">20260625</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260626</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -2863,41 +2863,6 @@
         <constant name="luaOutputPins6">"NONE"</constant>
         <constant name="luaOutputPins7">"NONE"</constant>
         <constant name="luaOutputPins8">"NONE"</constant>
-        <constant name="luaScript">hexstr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" }
-
-function toHexString(num)
-	if num == 0 then
-		return '0'
-	end
-
-	local result = ""
-	while num &gt; 0 do
-		local n = num % 16
-		result = hexstr[n + 1] ..result
-		num = math.floor(num / 16)
-	end
-	return result
-end
-
-function arrayToString(arr)
-	local str = ""
-	local index = 1
-	while arr[index] ~= nil do
-		str = str.." "..toHexString(arr[index])
-		index = index + 1
-	end
-	return str
-end
-
-function printPacket(bus, id, dlc, data)
-    print('Received ' .. arrayToString(data))
-end
-
-function onCanRx(bus, id, dlc, data)
-end
-
-function onTick()
-end</constant>
         <constant name="maf2AdcChannel">"Disabled"</constant>
         <constant name="mafAdcChannel">"Disabled"</constant>
         <constant cols="1" digits="2" name="mafDecoding" rows="32" units="kg/hour">
@@ -5213,7 +5178,7 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260622" nPages="1" signature="rusEFI main.2026.06.25.mega100.1389423519" version="5.0"/>
+    <versionInfo firmwareInfo="20260622" nPages="1" signature="rusEFI main.2026.06.26.mega100.3777604063" version="5.0"/>
     <bibliography author="rusEFI 20260622" writeDate="date"/>
     <settings/>
     <userComments/>
