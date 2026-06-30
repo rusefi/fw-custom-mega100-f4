@@ -63,8 +63,9 @@
 #define ADC_CHANNEL_NONE 0
 #define afr_sensor_s_size 20
 #define air_pressure_sensor_config_s_size 12
-#define air_pressure_sensor_type_e_auto_enum 0="MT_CUSTOM",10="MT_BOSCH_2_5",1="MT_DENSO183",4="MT_DODGE_NEON_2003",13="MT_GM_1_BAR",12="MT_GM_2_BAR",6="MT_GM_3_BAR",3="MT_HONDA3BAR",11="MT_MAZDA_1_BAR",7="MT_MPX4100",2="MT_MPX4250",9="MT_MPX4250A",15="MT_MPXH6300",14="MT_MPXH6400",5="MT_SUBY_DENSO",8="MT_TOYOTA_89420_02010"
+#define air_pressure_sensor_type_e_auto_enum 0="MT_CUSTOM",10="MT_BOSCH_2_5",16="MT_BOSCH_3_BAR",1="MT_DENSO183",4="MT_DODGE_NEON_2003",13="MT_GM_1_BAR",12="MT_GM_2_BAR",6="MT_GM_3_BAR",3="MT_HONDA3BAR",11="MT_MAZDA_1_BAR",7="MT_MPX4100",2="MT_MPX4250",9="MT_MPX4250A",15="MT_MPXH6300",14="MT_MPXH6400",5="MT_SUBY_DENSO",8="MT_TOYOTA_89420_02010"
 #define air_pressure_sensor_type_e_MT_BOSCH_2_5 10
+#define air_pressure_sensor_type_e_MT_BOSCH_3_BAR 16
 #define air_pressure_sensor_type_e_MT_CUSTOM 0
 #define air_pressure_sensor_type_e_MT_DENSO183 1
 #define air_pressure_sensor_type_e_MT_DODGE_NEON_2003 4
@@ -375,6 +376,7 @@
 #define CRANKING_CYCLE_CLT_SIZE 4
 #define CRANKING_ENRICH_CLT_COUNT 6
 #define CRANKING_ENRICH_COUNT 6
+#define CRANKING_FLEX_SIZE 4
 #define cranking_parameters_s_size 4
 #define CRITICAL_BUFFER_SIZE 120
 #define CRITICAL_PREFIX "CRITICAL"
@@ -496,7 +498,7 @@
 #define ego_sensor_e_ES_PLX 4
 #define egoSettings_NAME "CAN O2 sensors"
 #define EGT_CHANNEL_COUNT 8
-#define engine_configuration_s_size 4164
+#define engine_configuration_s_size 4200
 #define engine_load_mode_e_auto_enum 0="LM_SPEED_DENSITY",2="LM_ALPHA_N",3="LM_LUA",1="LM_REAL_MAF",4="UNSUPPORTED_ENUM_VALUE"
 #define engine_load_mode_e_LM_ALPHA_N 2
 #define engine_load_mode_e_LM_LUA 3
@@ -1366,6 +1368,8 @@
 #define InjectorNonlinearMode_INJ_None 0
 #define InjectorNonlinearMode_INJ_PolynomialAdder 1
 #define INSTANCE_INJECTOR injector
+#define JUMP_BLT_COMMAND 0xBC
+#define JUMP_DFU_COMMAND 0xBA
 #define KNOCK_RPM_TABLE_NAME "Engine Knock Threshold RPM Based"
 #define KNOCK_TABLE_RPM_SIZE 6
 #define KNOCK_TABLE_SIZE 6
@@ -1492,7 +1496,7 @@
 #define pedalSensor_NAME "Accelerator pedal"
 #define pedalToTpsTbl_NAME "ETB pedal target"
 #define PERCENT_TRIM_BYTE_PACKING_DIV 0.02
-#define persistent_config_s_size 16620
+#define persistent_config_s_size 16692
 #define pid_s_size 20
 #define pin_input_mode_e_auto_enum 0="PI_DEFAULT",4="PI_INVERTED_DEFAULT",6="PI_INVERTED_PULLDOWN",5="PI_INVERTED_PULLUP",2="PI_PULLDOWN",1="PI_PULLUP"
 #define pin_input_mode_e_PI_DEFAULT 0
@@ -1512,6 +1516,7 @@
 #define ppsExpAverageAlpha_NAME "Accelerator Exp Average"
 #define PRIMARY_CAN_NAME "Primary CAN"
 #define PRIME_CURVE_COUNT 8
+#define PRIME_FLEX_SIZE 4
 #define PROTOCOL_COIL_SHORT_PREFIX "c"
 #define PROTOCOL_CRANK1 "t1"
 #define PROTOCOL_CRANK2 "t2"
@@ -1529,7 +1534,7 @@
 #define RANGE_INPUT_COUNT 6
 #define RE_auto_update_root_url "https://rusefi.com/build_server"
 #define RE_obfuscated "false"
-#define REBOOT_COMMAND 0xbb
+#define REBOOT_COMMAND 0xBB
 #define rotational_idle_accumulator_s_size 4
 #define rotational_idle_s_size 36
 #define RotationalCutMode_auto_enum 0="Spark",2="Both",1="Fuel"
@@ -1603,7 +1608,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 2699162972
+#define SIGNATURE_HASH 1765175264
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1685,7 +1690,7 @@
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_BUTTON 0
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_CLUTCH_DOWN_SWITCH 2
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_CLUTCH_UP_SWITCH 3
-#define TOTAL_CONFIG_SIZE 16620
+#define TOTAL_CONFIG_SIZE 16692
 #define TPS_2_BYTE_PACKING_MULT 100
 #define TPS_PPS_TOO_HIGH_THRESHOLD 110
 #define TPS_PPS_TOO_LOW_THRESHOLD -10
@@ -1954,7 +1959,7 @@
 #define TS_PAGE_CRC_CHECK "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c"
 #define TS_PAGE_IDENTIFIERS "\x00\x00", "\x00\x01", "\x00\x02", "\x00\x03", "\x00\x04"
 #define TS_PAGE_READ_COMMANDS "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c"
-#define TS_PAGE_SIZES 16620, 256, 2048, 1268, 8000
+#define TS_PAGE_SIZES 16692, 256, 2048, 1268, 8000
 #define TS_PAGE_VALUE_WRITE "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v"
 #define TS_PERF_TRACE_BEGIN '_'
 #define TS_PERF_TRACE_BEGIN_char _
@@ -2230,7 +2235,7 @@
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
-#define TS_SIGNATURE "rusEFI main.2026.06.29.mega100.2699162972"
+#define TS_SIGNATURE "rusEFI main.2026.06.30.mega100.1765175264"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
