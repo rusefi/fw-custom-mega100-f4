@@ -362,6 +362,7 @@ static LOG_FIELD_CONSTNESS_SPECIFIER_STORAGE MLG::Entries::Field fields[] = {
 	{engine->outputChannels, 712, 28, "bank 2 intake cam input", ""},
 	{engine->outputChannels, 712, 29, "bank 2 exhaust cam input", ""},
 	{engine->outputChannels, 712, 30, "AE: Map Prediction Active", ""},
+	{engine->outputChannels, 712, 31, "Error: Flex", ""},
 	{engine->outputChannels.outputRequestPeriod, "outputRequestPeriod", "", 0},
 	{engine->outputChannels.mapFast, "mapFast", "", 0},
 	{engine->outputChannels.luaGauges[0], "Lua: Gauge 1", "value", 3},
@@ -659,8 +660,8 @@ static LOG_FIELD_CONSTNESS_SPECIFIER_STORAGE MLG::Entries::Field fields[] = {
 	{engine->fuelComputer.sdTcharge_coff, "sdTcharge_coff", "", 0},
 	{engine->fuelComputer.sdAirMassInOneCylinder, "Air: Cylinder airmass", "g", 3},
 	{engine->fuelComputer.normalizedCylinderFilling, "Air: Normalized cyl filling", "%", 1},
-	{engine->fuelComputer.brokenInjector, "brokenInjector", "", 0},
 	{engine->fuelComputer.idealEngineTorque, "idealEngineTorque", "", 0},
+	{engine->fuelComputer.brokenInjector, "brokenInjector", "", 0},
 	{engine->fuelComputer, 48, 0, "injectorHwIssue", ""},
 #endif
 #if EFI_LAUNCH_CONTROL
@@ -678,6 +679,7 @@ static LOG_FIELD_CONSTNESS_SPECIFIER_STORAGE MLG::Entries::Field fields[] = {
 	{engine->launchController, 4, 10, "Launch: speedCondition", ""},
 	{engine->launchController, 4, 11, "Launch: tpsCondition", ""},
 	{engine->launchController, 4, 12, "luaLaunchState", ""},
+	{engine->launchController, 4, 13, "Launch: isLaunchLatched", ""},
 	{engine->shiftTorqueReductionController, 0, 0, "isTorqueReductionTriggerPinValid", ""},
 	{engine->shiftTorqueReductionController, 0, 1, "torqueReductionTriggerPinState", ""},
 	{engine->shiftTorqueReductionController, 0, 2, "isTimeConditionSatisfied", ""},
