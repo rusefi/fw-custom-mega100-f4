@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="16696">
+    <page number="0" size="16744">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">20260711</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260712</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">20260712</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260713</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -1674,6 +1674,22 @@
 </constant>
         <constant name="hpfpValvePin">"NONE"</constant>
         <constant name="hpfpValvePinMode">"default"</constant>
+        <constant name="i2c1_enabled">"no"</constant>
+        <constant name="i2c1_sclPin">"NONE"</constant>
+        <constant name="i2c1_sdaPin">"NONE"</constant>
+        <constant name="i2c1_speed">"Standart mode 100K"</constant>
+        <constant name="i2c2_enabled">"no"</constant>
+        <constant name="i2c2_sclPin">"NONE"</constant>
+        <constant name="i2c2_sdaPin">"NONE"</constant>
+        <constant name="i2c2_speed">"Standart mode 100K"</constant>
+        <constant name="i2c3_enabled">"no"</constant>
+        <constant name="i2c3_sclPin">"NONE"</constant>
+        <constant name="i2c3_sdaPin">"NONE"</constant>
+        <constant name="i2c3_speed">"Standart mode 100K"</constant>
+        <constant name="i2c4_enabled">"no"</constant>
+        <constant name="i2c4_sclPin">"NONE"</constant>
+        <constant name="i2c4_sdaPin">"NONE"</constant>
+        <constant name="i2c4_speed">"Standart mode 100K"</constant>
         <constant digits="1" name="iacByTpsDecayTime" units="seconds">0.0</constant>
         <constant digits="1" name="iacByTpsHoldTime" units="seconds">0.0</constant>
         <constant digits="0" name="iacByTpsTaper" units="percent">2</constant>
@@ -5205,8 +5221,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260710" nPages="1" signature="rusEFI main.2026.07.12.mega100.1747689164" version="5.0"/>
-    <bibliography author="rusEFI 20260710" writeDate="date"/>
+    <versionInfo firmwareInfo="20260712" nPages="1" signature="rusEFI main.2026.07.13.mega100.1925797276" version="5.0"/>
+    <bibliography author="rusEFI 20260712" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
