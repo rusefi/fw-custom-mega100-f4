@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="16744">
+    <page number="0" size="16740">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,8 +560,8 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">20260714</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260715</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">20260715</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260716</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -5222,8 +5222,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260713" nPages="1" signature="rusEFI main.2026.07.15.mega100.3174278093" version="5.0"/>
-    <bibliography author="rusEFI 20260713" writeDate="date"/>
+    <versionInfo firmwareInfo="20260715" nPages="1" signature="rusEFI main.2026.07.16.mega100.1083243370" version="5.0"/>
+    <bibliography author="rusEFI 20260715" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
