@@ -946,6 +946,9 @@ float getOutputValueByHash(const int hash) {
 // auxTemp2Resistance
 		case -1795800404:
 			return engine->outputChannels.auxTemp2Resistance;
+// instantRpmRange
+		case -748456478:
+			return engine->outputChannels.instantRpmRange;
 // baseDwell
 		case -1777838088:
 			return engine->ignitionState.baseDwell;
@@ -1355,6 +1358,9 @@ float getOutputValueByHash(const int hash) {
 // injectorHwIssue
 		case -1237512821:
 			return engine->fuelComputer.injectorHwIssue;
+// dtAutotuneActive
+		case 408698318:
+			return engine->module<InjectorDeadtimeAutotune>()->dtAutotuneActive;
 #endif
 #if EFI_ENGINE_CONTROL && EFI_BOOST_CONTROL
 // isTpsInvalid
