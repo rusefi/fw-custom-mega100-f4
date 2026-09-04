@@ -1285,9 +1285,6 @@ float getConfigValueByHash(const int hash) {
 // injectorFlowAsMassFlow
 		case 444648859:
 			return engineConfiguration->injectorFlowAsMassFlow;
-// boardUseCanTerminator
-		case -312962799:
-			return engineConfiguration->boardUseCanTerminator;
 // kLineDoHondaSend
 		case 304164959:
 			return engineConfiguration->kLineDoHondaSend;
@@ -4364,11 +4361,6 @@ bool setConfigValueByName(const char *name, float value) {
 		case 444648859:
 	{
 		engineConfiguration->injectorFlowAsMassFlow = (int)value;
-		return 1;
-	}
-		case -312962799:
-	{
-		engineConfiguration->boardUseCanTerminator = (int)value;
 		return 1;
 	}
 		case 304164959:

@@ -2011,6 +2011,9 @@ const ConfigParameter allParameters[] = {
 	{ 0xE70EE490, // useSeparateIdleTablesForCrankingTaper
 		[]() -> float { return engineConfiguration->useSeparateIdleTablesForCrankingTaper; },
 		[](float value) { engineConfiguration->useSeparateIdleTablesForCrankingTaper = value; } },
+	{ 0xE74DCE76, // keepIdleSolenoidWhenStopped
+		[]() -> float { return engineConfiguration->keepIdleSolenoidWhenStopped; },
+		[](float value) { engineConfiguration->keepIdleSolenoidWhenStopped = value; } },
 	{ 0xE75AA57E, // issFilterReciprocal
 		[]() -> float { return engineConfiguration->issFilterReciprocal; },
 		[](float value) { engineConfiguration->issFilterReciprocal = value; } },
@@ -2056,9 +2059,6 @@ const ConfigParameter allParameters[] = {
 	{ 0xECA09D1A, // verboseTriggerSynchDetails
 		[]() -> float { return engineConfiguration->verboseTriggerSynchDetails; },
 		[](float value) { engineConfiguration->verboseTriggerSynchDetails = value; } },
-	{ 0xED589111, // boardUseCanTerminator
-		[]() -> float { return engineConfiguration->boardUseCanTerminator; },
-		[](float value) { engineConfiguration->boardUseCanTerminator = value; } },
 	{ 0xED6B9C53, // alternatorControl.dFactor
 		[]() -> float { return engineConfiguration->alternatorControl.dFactor; },
 		[](float value) { engineConfiguration->alternatorControl.dFactor = value; } },

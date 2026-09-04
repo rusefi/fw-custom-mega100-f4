@@ -1279,9 +1279,6 @@ Allow OpenBLT on Secondary CAN
 ### injectorFlowAsMassFlow
 Select whether to configure injector flow in volumetric flow (default, cc/min) or mass flow (g/s).
 
-### boardUseCanTerminator
-
-
 ### kLineDoHondaSend
 
 
