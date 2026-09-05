@@ -1354,9 +1354,6 @@ const ConfigParameter allParameters[] = {
 	{ 0xA4E31DCC, // artificialTestMisfire
 		[]() -> float { return engineConfiguration->artificialTestMisfire; },
 		[](float value) { engineConfiguration->artificialTestMisfire = value; } },
-	{ 0xA5BCC9DD, // can2OpenBLT
-		[]() -> float { return engineConfiguration->can2OpenBLT; },
-		[](float value) { engineConfiguration->can2OpenBLT = value; } },
 	{ 0xA69AEDCC, // wizardInjectorFlow
 		[]() -> float { return config->wizardInjectorFlow; },
 		[](float value) { config->wizardInjectorFlow = value; } },
@@ -1867,9 +1864,6 @@ const ConfigParameter allParameters[] = {
 	{ 0xD96F6E19, // useTLE8888_stepper
 		[]() -> float { return engineConfiguration->useTLE8888_stepper; },
 		[](float value) { engineConfiguration->useTLE8888_stepper = value; } },
-	{ 0xDA58130B, // canOpenBLT
-		[]() -> float { return engineConfiguration->canOpenBLT; },
-		[](float value) { engineConfiguration->canOpenBLT = value; } },
 	{ 0xDA5D1348, // misfireSettleCycles
 		[]() -> float { return engineConfiguration->misfireSettleCycles; },
 		[](float value) { engineConfiguration->misfireSettleCycles = value; } },

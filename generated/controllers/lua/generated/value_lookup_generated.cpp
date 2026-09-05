@@ -1276,12 +1276,6 @@ float getConfigValueByHash(const int hash) {
 // stepperDcInvertedPins
 		case 337194154:
 			return engineConfiguration->stepperDcInvertedPins;
-// canOpenBLT
-		case -631762165:
-			return engineConfiguration->canOpenBLT;
-// can2OpenBLT
-		case -1514354211:
-			return engineConfiguration->can2OpenBLT;
 // injectorFlowAsMassFlow
 		case 444648859:
 			return engineConfiguration->injectorFlowAsMassFlow;
@@ -4346,16 +4340,6 @@ bool setConfigValueByName(const char *name, float value) {
 		case 337194154:
 	{
 		engineConfiguration->stepperDcInvertedPins = (int)value;
-		return 1;
-	}
-		case -631762165:
-	{
-		engineConfiguration->canOpenBLT = (int)value;
-		return 1;
-	}
-		case -1514354211:
-	{
-		engineConfiguration->can2OpenBLT = (int)value;
 		return 1;
 	}
 		case 444648859:
