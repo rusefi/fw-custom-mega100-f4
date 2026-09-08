@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="16760">
+    <page number="0" size="16764">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -560,7 +560,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260905</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260908</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -1889,6 +1889,7 @@
         <constant name="idleIncrementalPidCic">"no"</constant>
         <constant digits="1" name="idleMaximumAirmass" units="mg">0.0</constant>
         <constant name="idleMode">"Open Loop"</constant>
+        <constant digits="1" name="idleParkNeutralOffset" units="%">0.0</constant>
         <constant digits="1" name="idlePidActivationTime" units="seconds">0.0</constant>
         <constant digits="0" name="idlePidDeactivationTpsThreshold" units="%">5</constant>
         <constant digits="0" name="idlePidRpmDeadZone" units="RPM">50</constant>
@@ -5232,8 +5233,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260904" nPages="1" signature="rusEFI main.2026.09.05.mega100.2301256875" version="5.0"/>
-    <bibliography author="rusEFI 20260904" writeDate="date"/>
+    <versionInfo firmwareInfo="20260907" nPages="1" signature="rusEFI main.2026.09.08.mega100.1325679909" version="5.0"/>
+    <bibliography author="rusEFI 20260907" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
