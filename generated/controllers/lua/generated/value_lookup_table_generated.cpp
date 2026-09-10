@@ -211,6 +211,9 @@ const ConfigParameter allParameters[] = {
 	{ 0x14A57F91, // wizardFiringOrder
 		[]() -> float { return config->wizardFiringOrder; },
 		[](float value) { config->wizardFiringOrder = value; } },
+	{ 0x14A5E899, // wizardVeTable
+		[]() -> float { return config->wizardVeTable; },
+		[](float value) { config->wizardVeTable = value; } },
 	{ 0x1535AD96, // compressionRatio
 		[]() -> float { return engineConfiguration->compressionRatio; },
 		[](float value) { engineConfiguration->compressionRatio = value; } },
@@ -766,6 +769,9 @@ const ConfigParameter allParameters[] = {
 	{ 0x5C336230, // externalRusEfiGdiModule
 		[]() -> float { return engineConfiguration->externalRusEfiGdiModule; },
 		[](float value) { engineConfiguration->externalRusEfiGdiModule = value; } },
+	{ 0x5C65BC53, // idleParkNeutralOffset
+		[]() -> float { return engineConfiguration->idleParkNeutralOffset; },
+		[](float value) { engineConfiguration->idleParkNeutralOffset = value; } },
 	{ 0x5D192839, // knockSpectrumSensitivity
 		[]() -> float { return engineConfiguration->knockSpectrumSensitivity; },
 		[](float value) { engineConfiguration->knockSpectrumSensitivity = value; } },
