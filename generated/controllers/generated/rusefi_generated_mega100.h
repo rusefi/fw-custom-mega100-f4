@@ -1643,7 +1643,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 4236372269
+#define SIGNATURE_HASH 3462430720
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -2158,13 +2158,13 @@
 #define ts_show_hd true
 #define ts_show_hip9011 true
 #define ts_show_i2c false
-#define ts_show_i2c1_enable true
-#define ts_show_i2c1_pins true
-#define ts_show_i2c2_enable true
-#define ts_show_i2c2_pins true
-#define ts_show_i2c3_enable true
-#define ts_show_i2c3_pins true
-#define ts_show_i2c4_enable true
+#define ts_show_i2c1_enable false
+#define ts_show_i2c1_pins false
+#define ts_show_i2c2_enable false
+#define ts_show_i2c2_pins false
+#define ts_show_i2c3_enable false
+#define ts_show_i2c3_pins false
+#define ts_show_i2c4_enable false
 #define ts_show_i2c4_pins false
 #define ts_show_iat true
 #define ts_show_idle_hardware true
@@ -2288,7 +2288,7 @@
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
-#define TS_SIGNATURE "rusEFI main.2026.09.10.mega100.4236372269"
+#define TS_SIGNATURE "rusEFI main.2026.09.11.mega100.3462430720"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
