@@ -560,7 +560,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20260921</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20260922</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -1014,7 +1014,7 @@
         <constant name="enableVerboseCanTx">"no"</constant>
         <constant digits="0" name="engineChartSize" units="count">400</constant>
         <constant name="engineMake">Honda</constant>
-        <constant digits="3" name="engineShutDownPeriod" units="">5.0</constant>
+        <constant digits="3" name="engineShutDownPeriod" units="">3.0</constant>
         <constant name="engineSnifferFocusOnInputs">"no"</constant>
         <constant digits="0" name="engineSnifferRpmThreshold" units="RPM">2500</constant>
         <constant name="engineSyncCam">"Intake First Bank"</constant>
@@ -5171,6 +5171,42 @@
         <constant digits="0" name="wizardPanelToShow" units="">0</constant>
         <constant name="wizardTps">"no"</constant>
         <constant name="wizardVeTable">"no"</constant>
+        <constant cols="1" digits="0" name="wueAnalyzeCltFuelCorr" rows="16" units="%">
+         150
+         150
+         142
+         136
+         128
+         119
+         112
+         110
+         106
+         106
+         103
+         101
+         100
+         100
+         100
+         100
+</constant>
+        <constant cols="16" digits="1" name="wueAnalyzeTargetTable" rows="16" units="afr">
+         14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7
+         14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7
+         14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7
+         14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7
+         14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7 14.7
+         14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0 14.0
+         13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5 13.5
+         13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2 13.2
+         13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1 13.1
+         12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9 12.9
+         12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6 12.6
+         12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3 12.3
+         11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8 11.8
+         11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3 11.3
+         11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0
+         10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7 10.7
+</constant>
         <constant digits="2" name="wwaeBeta" units="Fraction">0.3</constant>
         <constant digits="2" name="wwaeTau" units="Seconds">0.3</constant>
         <constant cols="1" digits="2" name="wwBetaCltValues" rows="8" units="">
@@ -5235,8 +5271,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20260920" nPages="1" signature="rusEFI main.2026.09.21.mega100.3239156718" version="5.0"/>
-    <bibliography author="rusEFI 20260920" writeDate="date"/>
+    <versionInfo firmwareInfo="20260921" nPages="1" signature="rusEFI main.2026.09.22.mega100.4177246064" version="5.0"/>
+    <bibliography author="rusEFI 20260921" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
