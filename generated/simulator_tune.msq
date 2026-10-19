@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="16772">
+    <page number="0" size="17680">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -559,8 +559,40 @@
         <constant digits="0" name="brakeMeanEffectivePressureDifferential" units="">0</constant>
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
-        <constant digits="0" name="byFirmwareVersion" units="index">20261016</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20261017</constant>
+        <constant digits="1" name="burstKnockDecayTime" units="s">1.0</constant>
+        <constant name="burstKnockEnabled">"disabled"</constant>
+        <constant cols="8" digits="1" name="burstKnockRetardTable" rows="8" units="deg">
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+</constant>
+        <constant cols="1" digits="0" name="burstKnockRpmBins" rows="8" units="rpm">
+         800
+         1600
+         2400
+         3200
+         4000
+         4800
+         5600
+         6400
+</constant>
+        <constant cols="1" digits="0" name="burstKnockTpsRateBins" rows="8" units="%/s">
+         0
+         150
+         300
+         450
+         600
+         750
+         900
+         1050
+</constant>
+        <constant digits="0" name="byFirmwareVersion" units="index">20261018</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20261019</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -776,6 +808,7 @@
         <constant digits="0" name="coastingFuelCutClt" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">60</constant>
         <constant name="coastingFuelCutEnabled">"disabled"</constant>
         <constant digits="0" name="coastingFuelCutMap" units="{bitStringValue(pressureUnitsLabels, useMetricOnInterface)}">30</constant>
+        <constant name="coastingFuelCutRequiresGear">"disabled"</constant>
         <constant digits="0" name="coastingFuelCutRpmHigh" units="rpm">1500</constant>
         <constant digits="0" name="coastingFuelCutRpmLow" units="rpm">1300</constant>
         <constant digits="0" name="coastingFuelCutTps" units="%">2</constant>
@@ -940,6 +973,7 @@
         <constant digits="0" name="device_uid2" units="">0</constant>
         <constant digits="0" name="device_uid3" units="">0</constant>
         <constant digits="1" name="dfcoDelay" units="sec">0.0</constant>
+        <constant name="dfcoFuelCutMode">"Overrun"</constant>
         <constant digits="0" name="dfcoRetardDeg" units="deg">0</constant>
         <constant digits="1" name="dfcoRetardRampInTime" units="s">0.0</constant>
         <constant name="digitalPotentiometerChipSelect1">"NONE"</constant>
@@ -948,9 +982,11 @@
         <constant name="digitalPotentiometerChipSelect4">"NONE"</constant>
         <constant name="digitalPotentiometerSpiDevice">"Off"</constant>
         <constant name="disableEtbWhenEngineStopped">"no"</constant>
-        <constant digits="0" name="disableFan1AtSpeed" units="">0</constant>
+        <constant digits="0" name="disableFan1AtSpeed" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">0</constant>
+        <constant digits="0" name="disableFan1AtSpeedHysteresis" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">5</constant>
         <constant name="disableFan1WhenStopped">"no"</constant>
-        <constant digits="0" name="disableFan2AtSpeed" units="">0</constant>
+        <constant digits="0" name="disableFan2AtSpeed" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">0</constant>
+        <constant digits="0" name="disableFan2AtSpeedHysteresis" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">5</constant>
         <constant name="disableFan2WhenStopped">"no"</constant>
         <constant digits="3" name="displacement" units="L">2.0</constant>
         <constant name="displayLogicLevelsInEngineSniffer">"no"</constant>
@@ -1001,8 +1037,6 @@
         <constant name="enableAemXSeriesEgt">"no"</constant>
         <constant name="enableCanVss">"no"</constant>
         <constant name="enableExtendedCanBroadcast">"yes"</constant>
-        <constant name="enableFan1WithAc">"no"</constant>
-        <constant name="enableFan2WithAc">"no"</constant>
         <constant name="enableKline">"disabled"</constant>
         <constant name="enableKnockSpectrogram">"no"</constant>
         <constant name="enableKnockSpectrogramFilter">"no"</constant>
@@ -1077,10 +1111,12 @@
         <constant digits="0" name="etbWastegatePid_periodMs" units="ms">0</constant>
         <constant digits="4" name="etbWastegatePid_pFactor" units="">1.0</constant>
         <constant name="externalRusEfiGdiModule">"no"</constant>
-        <constant digits="0" name="fan1AcAdder" units="%">10</constant>
+        <constant name="fan1AcMode">"Disabled"</constant>
+        <constant digits="0" name="fan1AcPressureOff" units="kPa">1100</constant>
+        <constant digits="0" name="fan1AcPressureOn" units="kPa">1400</constant>
         <constant digits="0" name="fan1ExtraIdle" units="%">2</constant>
         <constant digits="0" name="fan1MaxPwm" units="%">100</constant>
-        <constant digits="0" name="fan1MinPwm" units="%">20</constant>
+        <constant digits="0" name="fan1MinPwm" units="%">0</constant>
         <constant name="fan1PwmEnabled">"no"</constant>
         <constant digits="0" name="fan1PwmFrequency" units="Hz">250</constant>
         <constant cols="1" digits="0" name="fan1PwmValues" rows="8" units="%">
@@ -1104,10 +1140,12 @@
          105
          110
 </constant>
-        <constant digits="0" name="fan2AcAdder" units="%">10</constant>
+        <constant name="fan2AcMode">"Disabled"</constant>
+        <constant digits="0" name="fan2AcPressureOff" units="kPa">1400</constant>
+        <constant digits="0" name="fan2AcPressureOn" units="kPa">1800</constant>
         <constant digits="0" name="fan2ExtraIdle" units="%">2</constant>
         <constant digits="0" name="fan2MaxPwm" units="%">100</constant>
-        <constant digits="0" name="fan2MinPwm" units="%">20</constant>
+        <constant digits="0" name="fan2MinPwm" units="%">0</constant>
         <constant digits="0" name="fan2OffTemperature" units="C">91</constant>
         <constant digits="0" name="fan2OnTemperature" units="C">95</constant>
         <constant name="fan2Pin">"NONE"</constant>
@@ -1231,8 +1269,63 @@
          0
 </constant>
         <constant name="fuelPressureSensorMode">"Absolute"</constant>
+        <constant cols="1" digits="0" name="fuelPressureTargetLoadBins" rows="4" units="load">
+         0
+         100
+         200
+         300
+</constant>
+        <constant cols="1" digits="0" name="fuelPressureTargetRpmBins" rows="4" units="rpm">
+         0
+         2666
+         5333
+         8000
+</constant>
+        <constant cols="4" digits="1" name="fuelPressureTargetTable" rows="4" units="kPa">
+         350.0 350.0 350.0 350.0
+         350.0 350.0 350.0 350.0
+         350.0 350.0 350.0 350.0
+         350.0 350.0 350.0 350.0
+</constant>
+        <constant name="fuelPump2Pin">"NONE"</constant>
+        <constant name="fuelPump2PinMode">"default"</constant>
+        <constant digits="1" name="fuelPump_iTermMax" units="%">30.0</constant>
+        <constant digits="1" name="fuelPump_iTermMin" units="%">-30.0</constant>
+        <constant name="fuelPumpAggressiveRelief">"disabled"</constant>
+        <constant cols="1" digits="0" name="fuelPumpBaseDutyFpBins" rows="4" units="kPa">
+         0
+         233
+         466
+         700
+</constant>
+        <constant cols="1" digits="0" name="fuelPumpBaseDutyRpmBins" rows="4" units="rpm">
+         0
+         2666
+         5333
+         8000
+</constant>
+        <constant cols="4" digits="1" name="fuelPumpBaseDutyTable" rows="4" units="%">
+         50.0 50.0 50.0 50.0
+         50.0 50.0 50.0 50.0
+         50.0 50.0 50.0 50.0
+         50.0 50.0 50.0 50.0
+</constant>
+        <constant digits="4" name="fuelPumpControl_dFactor" units="">0.0</constant>
+        <constant digits="4" name="fuelPumpControl_iFactor" units="">0.0</constant>
+        <constant digits="0" name="fuelPumpControl_maxValue" units="">50</constant>
+        <constant digits="0" name="fuelPumpControl_minValue" units="">-50</constant>
+        <constant digits="0" name="fuelPumpControl_offset" units="">0</constant>
+        <constant digits="0" name="fuelPumpControl_periodMs" units="ms">5</constant>
+        <constant digits="4" name="fuelPumpControl_pFactor" units="">0.1</constant>
+        <constant digits="0" name="fuelPumpMaxDuty" units="%">100</constant>
+        <constant digits="0" name="fuelPumpMinDuty" units="%">0</constant>
+        <constant name="fuelPumpMode">"Single relay"</constant>
         <constant name="fuelPumpPin">"NONE"</constant>
         <constant name="fuelPumpPinMode">"default"</constant>
+        <constant digits="0" name="fuelPumpPwmFrequency" units="Hz">100</constant>
+        <constant digits="0" name="fuelPumpReliefEngageOverpressure" units="kPa">50</constant>
+        <constant digits="0" name="fuelPumpReliefMaxInjectedMass" units="mg">10</constant>
+        <constant digits="0" name="fuelPumpReliefRecoverOverpressure" units="kPa">20</constant>
         <constant digits="0" name="fuelReferencePressure" units="{bitStringValue(pressureUnitsLabels, useMetricOnInterface)}">300</constant>
         <constant name="fuelTempSensor_adcChannel">"Disabled"</constant>
         <constant digits="1" name="fuelTempSensor_bias_resistor" units="Ohm">0.0</constant>
@@ -1341,6 +1434,8 @@
          0.0
 </constant>
         <constant name="gearControllerMode">"None"</constant>
+        <constant name="gearDetectionRpmSourceIsInputShaftSpeed">"Engine RPM"</constant>
+        <constant name="gearDetectionUseOutputShaftSpeed">"Main Vehicle Speed"</constant>
         <constant digits="2" name="gearRatio1" units="ratio">0.0</constant>
         <constant digits="2" name="gearRatio10" units="ratio">0.0</constant>
         <constant digits="2" name="gearRatio2" units="ratio">0.0</constant>
@@ -3246,6 +3341,9 @@
         <constant digits="1" name="oilTempSensor_tempC_1" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">0.0</constant>
         <constant digits="1" name="oilTempSensor_tempC_2" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">0.0</constant>
         <constant digits="1" name="oilTempSensor_tempC_3" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">0.0</constant>
+        <constant digits="0" name="ossFilterReciprocal" units="">3</constant>
+        <constant name="outputShaftSpeedSensorPin">"NONE"</constant>
+        <constant digits="0" name="outputShaftSpeedSensorTeeth" units="count">1</constant>
         <constant name="overrideTriggerGaps">"no"</constant>
         <constant name="overrideVvtTriggerGaps">"no"</constant>
         <constant name="pauseEtbControl">"no"</constant>
@@ -3360,6 +3458,16 @@
         <constant digits="0" name="referenceTorqueForGenerator" units="Nm">250</constant>
         <constant digits="0" name="referenceVeForGenerator" units="">75</constant>
         <constant name="rethrowHardFault">"no"</constant>
+        <constant name="rollingLaunchActivatePin">"NONE"</constant>
+        <constant name="rollingLaunchActivatePinMode">"DEFAULT"</constant>
+        <constant name="rollingLaunchEnabled">"disabled"</constant>
+        <constant digits="0" name="rollingLaunchFuelAdderPercent" units="%">5</constant>
+        <constant digits="0" name="rollingLaunchMaxRpm" units="rpm">7000</constant>
+        <constant digits="0" name="rollingLaunchMinArmRpm" units="rpm">2500</constant>
+        <constant digits="0" name="rollingLaunchMinVss" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">10</constant>
+        <constant digits="1" name="rollingLaunchRampOutTime" units="s">1.0</constant>
+        <constant digits="0" name="rollingLaunchRpmWindow" units="rpm">500</constant>
+        <constant digits="0" name="rollingLaunchTimingRetard" units="deg">10</constant>
         <constant digits="0" name="rotationalIdleController_accumulators1_acc_adder" units="">0</constant>
         <constant digits="0" name="rotationalIdleController_accumulators1_acc_max" units="">0</constant>
         <constant digits="0" name="rotationalIdleController_accumulators1_acc_offset" units="">0</constant>
@@ -3680,6 +3788,12 @@
         <constant digits="0" name="sdLogStopRpm" units="rpm">700</constant>
         <constant name="sdLogTriggerPin">"NONE"</constant>
         <constant name="sdLogTriggerPinMode">"DEFAULT"</constant>
+        <constant digits="0" name="secondaryFpActivationLoad" units="load">100</constant>
+        <constant digits="0" name="secondaryFpActivationRpm" units="rpm">3000</constant>
+        <constant digits="0" name="secondaryFpActivationTps" units="%">50</constant>
+        <constant digits="0" name="secondaryFpLoadHysteresis" units="load">10</constant>
+        <constant digits="0" name="secondaryFpRpmHysteresis" units="rpm">500</constant>
+        <constant digits="0" name="secondaryFpTpsHysteresis" units="%">10</constant>
         <constant name="secondaryInjectorCompensationMode">"None"</constant>
         <constant digits="0" name="secondaryInjectorFuelReferencePressure" units="{bitStringValue(pressureUnitsLabels, useMetricOnInterface)}">0</constant>
         <constant name="secondSolenoidPin">"NONE"</constant>
@@ -3691,6 +3805,26 @@
         <constant digits="0" name="simulatorCamPosition3" units="">0</constant>
         <constant digits="0" name="simulatorCamPosition4" units="">0</constant>
         <constant name="skippedWheelOnCam">"On crankshaft"</constant>
+        <constant digits="0" name="smAccelHoldMs" units="ms">0</constant>
+        <constant digits="0" name="smAccelRateThreshold" units="RPM/s">0</constant>
+        <constant digits="1" name="smAccumulatorDecayRate" units="%/s">10.0</constant>
+        <constant digits="0" name="smAccumulatorDownshiftThreshold" units="">40</constant>
+        <constant digits="1" name="smAccumulatorGain" units="%/s">20.0</constant>
+        <constant digits="0" name="smAccumulatorSnapTimeMs" units="ms">0</constant>
+        <constant digits="0" name="smAccumulatorUpshiftThreshold" units="">40</constant>
+        <constant digits="0" name="smColdTempThreshold" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">60</constant>
+        <constant digits="0" name="smDecelRateThreshold" units="RPM/s">0</constant>
+        <constant name="smDownshiftClutchSwitch">"None"</constant>
+        <constant digits="0" name="smHotTempThreshold" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">100</constant>
+        <constant name="smRelatchOnClutchDown">"disabled"</constant>
+        <constant digits="0" name="smRpmRateWindowMs" units="ms">100</constant>
+        <constant name="smSecondClutchSwitchAvailable">"no"</constant>
+        <constant name="smShiftDetectionMode">"RPM Rate"</constant>
+        <constant digits="0" name="smShiftLatchTimeMs" units="ms">0</constant>
+        <constant digits="0" name="smShiftMinVss" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">0</constant>
+        <constant digits="0" name="smTransientHoldTimeMs" units="ms">200</constant>
+        <constant name="smUpshiftClutchSwitch">"None"</constant>
+        <constant digits="0" name="smWotTpsThreshold" units="%">90</constant>
         <constant cols="1" digits="0" name="sparkDwellRpmBins" rows="8" units="RPM">
          0
          1000
@@ -3712,6 +3846,7 @@
          4.0
 </constant>
         <constant digits="0" name="sparkHardwareLatencyCorrection" units="uS">0</constant>
+        <constant digits="0" name="speedometerBenchTestFrequency" units="Hz">100</constant>
         <constant name="speedometerOutputPin">"NONE"</constant>
         <constant digits="0" name="speedometerPulsePerKm" units="">2485</constant>
         <constant name="spi1MisoMode">"default"</constant>
@@ -3760,6 +3895,7 @@
         <constant name="startStopButtonMode">"DEFAULT"</constant>
         <constant name="startStopButtonPin">"NONE"</constant>
         <constant digits="0" name="startUpFuelPumpDuration" units="seconds">4</constant>
+        <constant name="stateBasedStft">"disabled"</constant>
         <constant name="stepper_dc_use_two_wires">"no"</constant>
         <constant name="stepper_raw_output1">"NONE"</constant>
         <constant name="stepper_raw_output2">"NONE"</constant>
@@ -4525,6 +4661,9 @@
         <constant digits="1" name="tpsDecelEnleanmentThreshold" units="%/sample">0.0</constant>
         <constant digits="0" name="tpsErrorDetectionTooHigh" units="%">110</constant>
         <constant digits="0" name="tpsErrorDetectionTooLow" units="%">-10</constant>
+        <constant digits="3" name="tpsExpAverageAlpha" units="">1.0</constant>
+        <constant digits="1" name="tpsExpAverageResetThreshold" units="%">0.0</constant>
+        <constant digits="0" name="tpsExpAverageResetTimeMs" units="ms">0</constant>
         <constant digits="2" name="tpsMax" units="V">5.0</constant>
         <constant digits="2" name="tpsMin" units="V">0.0</constant>
         <constant digits="1" name="tpsSecondaryMaximum" units="%">0.0</constant>
@@ -4641,6 +4780,9 @@
          7.0 9.0 10.0 12.0
 </constant>
         <constant name="transmissionControllerMode">"None"</constant>
+        <constant name="transmissionSlipDetectionEnabled">"disabled"</constant>
+        <constant digits="0" name="transmissionSlipMinVss" units="{bitStringValue(velocityUnitsLabels, useMetricOnInterface)}">5</constant>
+        <constant name="transmissionSlipRpmSourceIsInputShaftSpeed">"Engine RPM"</constant>
         <constant digits="0" name="trigger_customSkippedToothCount" units="number">0</constant>
         <constant digits="0" name="trigger_customTotalToothCount" units="number">0</constant>
         <constant name="trigger_type">"60-2"</constant>
@@ -4729,6 +4871,7 @@
         <constant name="useCltBasedRpmLimit">"no"</constant>
         <constant name="useCompensatedMap">"disabled"</constant>
         <constant name="useEeprom">"no"</constant>
+        <constant name="useEngineStateMachine">"disabled"</constant>
         <constant name="useFixedBaroCorrFromMap">"no"</constant>
         <constant name="useFordRedundantPps">"no"</constant>
         <constant name="useFordRedundantTps">"no"</constant>
@@ -5082,9 +5225,90 @@
         <constant name="vvlRelayPin">"NONE"</constant>
         <constant name="vvlRelayPinMode">"default"</constant>
         <constant digits="0" name="vvtActivationDelayMs" units="ms">6000</constant>
+        <constant name="vvtAdvancedModeEnabled">"disabled"</constant>
+        <constant cols="1" digits="0" name="vvtAdvDistanceBinsExhaust" rows="9" units="deg">
+         -40
+         -30
+         -20
+         -10
+         0
+         10
+         20
+         30
+         40
+</constant>
+        <constant cols="1" digits="0" name="vvtAdvDistanceBinsIntake" rows="9" units="deg">
+         -40
+         -30
+         -20
+         -10
+         0
+         10
+         20
+         30
+         40
+</constant>
+        <constant cols="1" digits="1" name="vvtAdvDutyExhaust" rows="6" units="%">
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+</constant>
+        <constant cols="1" digits="1" name="vvtAdvDutyIntake" rows="6" units="%">
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+</constant>
+        <constant cols="1" digits="0" name="vvtAdvOilPressureBinsExhaust" rows="6" units="kPa">
+         0
+         200
+         400
+         600
+         800
+         1000
+</constant>
+        <constant cols="1" digits="0" name="vvtAdvOilPressureBinsIntake" rows="6" units="kPa">
+         0
+         200
+         400
+         600
+         800
+         1000
+</constant>
+        <constant cols="1" digits="1" name="vvtAdvPFactorExhaust" rows="9" units="x100">
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+</constant>
+        <constant cols="1" digits="1" name="vvtAdvPFactorIntake" rows="9" units="x100">
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+</constant>
         <constant name="vvtBooleanForVerySpecialCases">"false"</constant>
         <constant digits="0" name="vvtControlMinClt" units="{bitStringValue(unitsLabels, useMetricOnInterface)}">0</constant>
         <constant digits="0" name="vvtControlMinRpm" units="RPM">600</constant>
+        <constant digits="0" name="vvtExhaust_iTermMax" units="%">1000</constant>
+        <constant digits="0" name="vvtExhaust_iTermMin" units="%">-1000</constant>
+        <constant digits="0" name="vvtIntake_iTermMax" units="%">1000</constant>
+        <constant digits="0" name="vvtIntake_iTermMin" units="%">-1000</constant>
         <constant name="vvtMode1">"Single Tooth"</constant>
         <constant name="vvtMode2">"Inactive"</constant>
         <constant digits="1" name="vvtOffsets1" units="value">450.0</constant>
@@ -5175,6 +5399,27 @@
         <constant digits="0" name="wizardPanelToShow" units="">0</constant>
         <constant name="wizardTps">"no"</constant>
         <constant name="wizardVeTable">"no"</constant>
+        <constant cols="1" digits="1" name="wotEnrichmentAfrAdder" rows="8" units="afr">
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+         0.0
+</constant>
+        <constant name="wotEnrichmentEnabled">"disabled"</constant>
+        <constant cols="1" digits="1" name="wotEnrichmentTimeBins" rows="8" units="s">
+         0.0
+         4.3
+         8.6
+         12.9
+         17.1
+         21.4
+         25.7
+         30.0
+</constant>
         <constant cols="1" digits="0" name="wueAnalyzeCltFuelCorr" rows="16" units="%">
          150
          150
@@ -5275,8 +5520,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20261011" nPages="1" signature="rusEFI main.2026.10.17.mega100.303871540" version="5.0"/>
-    <bibliography author="rusEFI 20261011" writeDate="date"/>
+    <versionInfo firmwareInfo="20261018" nPages="1" signature="rusEFI main.2026.10.19.mega100.4129407200" version="5.0"/>
+    <bibliography author="rusEFI 20261018" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
