@@ -122,6 +122,7 @@
 #define bench_mode_e_BENCH_IDLE_VALVE 8
 #define bench_mode_e_BENCH_MAIN_RELAY 0
 #define bench_mode_e_BENCH_SECOND_IDLE_VALVE 14
+#define bench_mode_e_BENCH_SPEEDO_TEST 44
 #define bench_mode_e_BENCH_STARTER_DISABLE_RELAY 3
 #define bench_mode_e_BENCH_STARTER_ENABLE_RELAY 2
 #define bench_mode_e_BENCH_VVT0_VALVE 16
@@ -195,6 +196,8 @@
 #define brain_pin_diag_e_PIN_SHORT_TO_BAT 0x04
 #define brain_pin_diag_e_PIN_SHORT_TO_GND 0x02
 #define brain_pin_diag_e_PIN_UNKNOWN 0x80
+#define BURST_KNOCK_RPM_SIZE 8
+#define BURST_KNOCK_TPS_RATE_SIZE 8
 #define C_MC33810_COUNT 1
 #define CAM_1_MODE_NAME "Cam mode (intake)"
 #define CAM_2_MODE_NAME "Cam mode (exhaust)"
@@ -461,6 +464,11 @@
 #define DEFAULT_SELT_STIM_RPM 1200
 #define DEFAULT_SELT_STIM_VVT0 23
 #define DEFAULT_SOLENOID_FREQUENCY 300
+#define dfco_fuel_cut_mode_e_auto_enum 0="Overrun",2="Both",1="Decel"
+#define dfco_fuel_cut_mode_e_Both 2
+#define dfco_fuel_cut_mode_e_Decel 1
+#define dfco_fuel_cut_mode_e_enum "Overrun", "Decel", "Both", "INVALID"
+#define dfco_fuel_cut_mode_e_Overrun 0
 #define DIALOG_NAME_VEHICLE_INFORMATION "Vehicle Information"
 #define DIGIPOT_COUNT 4
 #define DISPLACEMENT_DIGITS 3
@@ -512,7 +520,7 @@
 #define ego_sensor_e_ES_PLX 4
 #define egoSettings_NAME "CAN O2 sensors"
 #define EGT_CHANNEL_COUNT 8
-#define engine_configuration_s_size 4280
+#define engine_configuration_s_size 5092
 #define engine_load_mode_e_auto_enum 0="LM_SPEED_DENSITY",2="LM_ALPHA_N",3="LM_LUA",1="LM_REAL_MAF",4="UNSUPPORTED_ENUM_VALUE"
 #define engine_load_mode_e_LM_ALPHA_N 2
 #define engine_load_mode_e_LM_LUA 3
@@ -648,6 +656,11 @@
 #define ETB_COUNT 2
 #define ETB_HW_MAX_FREQUENCY 3000
 #define ETHERNET_PORT 29001
+#define fan_ac_mode_e_auto_enum 0="Disabled",2="Pressure",1="Relay"
+#define fan_ac_mode_e_Disabled 0
+#define fan_ac_mode_e_enum "Disabled", "Relay", "Pressure"
+#define fan_ac_mode_e_Pressure 2
+#define fan_ac_mode_e_Relay 1
 #define FAN_PWM_CURVE_SIZE 8
 #define FIELD_DISPLACEMENT displacement
 #define FIELD_INJECTOR_FLOW injector.flow
@@ -657,6 +670,10 @@
 #define FLEX_TRANSIENT_ETH_SIZE 8
 #define FLOW_LINEARIZATION_MASS_SIZE 2
 #define FLOW_LINEARIZATION_PRESSURE_SIZE 2
+#define FP_DUTY_RPM_SIZE 4
+#define FP_DUTY_TABLE_SIZE 4
+#define FP_PRESSURE_RPM_SIZE 4
+#define FP_PRESSURE_TABLE_SIZE 4
 #define FRONTEND_TITLE_BAR_NAME "rusEFI"
 #define FT_BANK_COUNT 2
 #define ft_region_e_ftRegionCruise 3
@@ -671,6 +688,11 @@
 #define fuel_pressure_sensor_mode_e_FPM_Absolute 0
 #define fuel_pressure_sensor_mode_e_FPM_Differential 2
 #define fuel_pressure_sensor_mode_e_FPM_Gauge 1
+#define fuel_pump_mode_e_auto_enum 0="Single",1="Dual",2="Pwm"
+#define fuel_pump_mode_e_Dual 1
+#define fuel_pump_mode_e_enum "Single relay", "Dual relay", "PWM pressure control", "INVALID"
+#define fuel_pump_mode_e_Pwm 2
+#define fuel_pump_mode_e_Single 0
 #define FUEL_RPM_COUNT 16
 #define FUEL_TRIM_SIZE 4
 #define GAP_TRACKING_LENGTH 18
@@ -845,6 +867,7 @@
 #define GAUGE_NAME_TIMING_ADVANCE "Timing: base ignition"
 #define GAUGE_NAME_TPS "TPS"
 #define GAUGE_NAME_TPS2 "TPS2"
+#define GAUGE_NAME_TRANS_SLIP "Transmission Slip"
 #define GAUGE_NAME_TRG_ERR "Trigger Error Counter"
 #define GAUGE_NAME_TRG_GAP "Sync: Trigger Latest Ratio"
 #define GAUGE_NAME_TUNE_CRC16 "Tune CRC16"
@@ -1537,7 +1560,7 @@
 #define pedalSensor_NAME "Accelerator pedal"
 #define pedalToTpsTbl_NAME "ETB pedal target"
 #define PERCENT_TRIM_BYTE_PACKING_DIV 0.02
-#define persistent_config_s_size 16772
+#define persistent_config_s_size 17680
 #define pid_s_size 20
 #define pin_input_mode_e_auto_enum 0="PI_DEFAULT",4="PI_INVERTED_DEFAULT",6="PI_INVERTED_PULLDOWN",5="PI_INVERTED_PULLUP",2="PI_PULLDOWN",1="PI_PULLUP"
 #define pin_input_mode_e_PI_DEFAULT 0
@@ -1657,10 +1680,19 @@
 #define show_default_engine_type false
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 303871540
+#define SIGNATURE_HASH 4129407200
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
+#define sm_clutch_switch_e_auto_enum 0="None",2="ClutchDown",1="ClutchUp"
+#define sm_clutch_switch_e_ClutchDown 2
+#define sm_clutch_switch_e_ClutchUp 1
+#define sm_clutch_switch_e_enum "None", "Clutch Up", "Clutch Down", "INVALID"
+#define sm_clutch_switch_e_None 0
+#define sm_shift_detection_mode_e_auto_enum 0="RpmRate",1="VssRate"
+#define sm_shift_detection_mode_e_enum "RPM Rate", "VSS Rate", "INVALID", "INVALID"
+#define sm_shift_detection_mode_e_RpmRate 0
+#define sm_shift_detection_mode_e_VssRate 1
 #define smLaunchControl_NAME "Launch Control"
 #define SMOOTHED_GAUGE_NAME_AFR "Smoothed Air/Fuel Ratio"
 #define SMOOTHED_GAUGE_NAME_AFR2 "Smoothed Air/Fuel Ratio 2"
@@ -1741,7 +1773,7 @@
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_BUTTON 0
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_CLUTCH_DOWN_SWITCH 2
 #define torqueReductionActivationMode_e_TORQUE_REDUCTION_CLUTCH_UP_SWITCH 3
-#define TOTAL_CONFIG_SIZE 16772
+#define TOTAL_CONFIG_SIZE 17680
 #define TPS_2_BYTE_PACKING_MULT 100
 #define TPS_ACCEL_UNITS "ms/frac"
 #define TPS_PPS_TOO_HIGH_THRESHOLD 110
@@ -1752,6 +1784,8 @@
 #define TRACTION_CONTROL_ETB_DROP_SPEED_SIZE 6
 #define TRAILING_SPARK_RPM_SIZE 4
 #define TRAILING_SPARK_SIZE 4
+#define TRANSIENT_INPUT_INVALID 1
+#define TRANSIENT_INPUT_NONE 0
 #define transmission_controller_e_enum "None", "Simple Transmission", "Generic 4-Speed", "GM 4L6X"
 #define TransmissionControllerMode_auto_enum 0="None",2="Generic4",3="Gm4l6x",1="SimpleTransmissionController"
 #define TransmissionControllerMode_Generic4 2
@@ -2018,7 +2052,7 @@
 #define TS_PAGE_CRC_CHECK "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c", "k%2i%2o%2c"
 #define TS_PAGE_IDENTIFIERS "\x00\x00", "\x00\x01", "\x00\x02", "\x00\x03", "\x00\x04"
 #define TS_PAGE_READ_COMMANDS "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c", "R%2i%2o%2c"
-#define TS_PAGE_SIZES 16772, 256, 2048, 1268, 8000
+#define TS_PAGE_SIZES 17680, 256, 2048, 1268, 8000
 #define TS_PAGE_VALUE_WRITE "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v", "C%2i%2o%2c%v"
 #define TS_PERF_TRACE_BEGIN '_'
 #define TS_PERF_TRACE_BEGIN_char _
@@ -2066,6 +2100,7 @@
 #define ts_show_bench_test true
 #define ts_show_brake_pedal_indicator true
 #define ts_show_brake_pedal_pin true
+#define ts_show_burst_knock true
 #define ts_show_cam1 true
 #define ts_show_cam2 true
 #define ts_show_can2 true
@@ -2115,6 +2150,7 @@
 #define ts_show_enableKnockSpectrogram true
 #define ts_show_engine_code true
 #define ts_show_engine_make true
+#define ts_show_engine_state_machine true
 #define ts_show_etb true
 #define ts_show_etb_bias_curve true
 #define ts_show_etb_extra_monitoring
@@ -2233,6 +2269,7 @@
 #define ts_show_primary_trigger true
 #define ts_show_reboot_to_dfu true
 #define ts_show_reset_calibrations true
+#define ts_show_rolling_launch true
 #define ts_show_rotary true
 #define ts_show_sd_card true
 #define ts_show_sd_pins true
@@ -2308,12 +2345,13 @@
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
-#define TS_SIGNATURE "rusEFI main.2026.10.17.mega100.303871540"
+#define ts_show_wot_enrichment true
+#define TS_SIGNATURE "rusEFI main.2026.10.19.mega100.4129407200"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
 #define TS_TEST_COMMAND_char t
-#define TS_TOTAL_OUTPUT_SIZE 2228
+#define TS_TOTAL_OUTPUT_SIZE 2304
 #define TS_TRIGGER_SCOPE_CHANNEL_1_NAME "Channel 1"
 #define TS_TRIGGER_SCOPE_CHANNEL_2_NAME "Channel 2"
 #define TS_TRIGGER_SCOPE_DISABLE 5
@@ -2381,6 +2419,8 @@
 #define VVT2_TARGET_NAME "VVT exhaust target"
 #define VVT_25_NAME "INVALID"
 #define VVT_26_NAME "INVALID"
+#define VVT_ADV_DISTANCE_SIZE 9
+#define VVT_ADV_OILP_SIZE 6
 #define vvt_mode_e_auto_enum 0="VVT_INACTIVE",8="VVT_BARRA_3_PLUS_1",17="VVT_BMW_VANOS_RELUCTOR",5="VVT_BOSCH_QUICK_START",14="VVT_CHRYSLER_PHASER",29="VVT_CUSTOM_1",30="VVT_CUSTOM_2",25="VVT_CUSTOM_25",26="VVT_CUSTOM_26",32="VVT_CUSTOM_3",33="VVT_CUSTOM_4",34="VVT_CUSTOM_5",23="VVT_DEV",19="VVT_FORD_COYOTE",7="VVT_FORD_ST170",21="VVT_HONDA_CBR_600",16="VVT_HONDA_K_EXHAUST",10="VVT_HONDA_K_INTAKE",24="VVT_HR12DDR_IN",13="VVT_MAP_V_TWIN",22="VVT_MAZDA_L",15="VVT_MAZDA_SKYACTIV",3="VVT_MIATA_NB",12="VVT_MITSUBISHI_3A92",18="VVT_MITSUBISHI_4G63",4="VVT_MITSUBISHI_4G69",20="VVT_MITSUBISHI_6G72",31="VVT_MITSUBISHI_6G75",11="VVT_NISSAN_MR",35="VVT_NISSAN_VK56DE",9="VVT_NISSAN_VQ",1="VVT_SINGLE_TOOTH",28="VVT_SUBARU_7TOOTH",27="VVT_TOYOTA_3TOOTH_UZ",2="VVT_TOYOTA_3_TOOTH",6="VVT_TOYOTA_4_1"
 #define vvt_mode_e_enum "Inactive", "Single Tooth", "Toyota 3 Tooth Even/2JZ", "Miata NB2", "Mitsu 4G69", "Bosch Quick Start", "4/1", "ST 170", "Ford Barra 3+1", "Nissan VQ", "Honda K Intake", "Nissan MR18", "Mitsu 3A92", "Sync by MAP", "not working 7736 Chrysler Phaser", "Mazda Skyactiv", "Honda K Exhaust", "BMW VANOS Reluctor", "Mitsubishi 4G63", "Ford Coyote", "Mitsu 6G72", "Honda 600", "Mazda L", "Dev", "HR12DDR In", "INVALID", "INVALID", "Toyota 3 Tooth UZ", "Subaru 3-1-2-1", "INVALID", "INVALID", "Mitsu 6G75", "INVALID", "INVALID", "INVALID", "Nissan VK56DE PHASE"
 #define vvt_mode_e_VVT_BARRA_3_PLUS_1 8
@@ -2427,4 +2467,5 @@
 #define WARNING_BUFFER_SIZE 120
 #define wbo_s_size 8
 #define WE_SECTION_FILE "tunerstudio/WueAnalyze.ini"
+#define WOT_ENRICHMENT_SIZE 8
 #define WWAE_TABLE_SIZE 8

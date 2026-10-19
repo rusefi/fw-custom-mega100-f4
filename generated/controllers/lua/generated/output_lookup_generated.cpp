@@ -58,9 +58,6 @@ float getOutputValueByHash(const int hash) {
 // isPedalError
 		case -2035612655:
 			return engine->outputChannels.isPedalError;
-// launchTriggered
-		case -52473827:
-			return engine->outputChannels.launchTriggered;
 // isTps2Error
 		case -1529936844:
 			return engine->outputChannels.isTps2Error;
@@ -190,12 +187,6 @@ float getOutputValueByHash(const int hash) {
 // engineMakeCodeNameCrc16
 		case 1726931380:
 			return engine->outputChannels.engineMakeCodeNameCrc16;
-// wallFuelAmount
-		case 115540725:
-			return engine->outputChannels.wallFuelAmount;
-// wallFuelCorrectionValue
-		case -1511514122:
-			return engine->outputChannels.wallFuelCorrectionValue;
 // flexAeMultiplier
 		case -1150933023:
 			return engine->outputChannels.flexAeMultiplier;
@@ -241,9 +232,6 @@ float getOutputValueByHash(const int hash) {
 // tuneCrc16
 		case -1158359776:
 			return engine->outputChannels.tuneCrc16;
-// veValue
-		case 1933507837:
-			return engine->outputChannels.veValue;
 // seconds
 		case -1962923820:
 			return engine->outputChannels.seconds;
@@ -973,6 +961,15 @@ float getOutputValueByHash(const int hash) {
 // sdCardMode
 		case 545972859:
 			return engine->outputChannels.sdCardMode;
+// outputShaftSpeed
+		case 1934602685:
+			return engine->outputChannels.outputShaftSpeed;
+// transmissionSlipPercent
+		case 1834866008:
+			return engine->outputChannels.transmissionSlipPercent;
+// transmissionSlipValid
+		case -15013385:
+			return engine->outputChannels.transmissionSlipValid;
 // baseDwell
 		case -1777838088:
 			return engine->ignitionState.baseDwell;
@@ -1078,6 +1075,9 @@ float getOutputValueByHash(const int hash) {
 // fan1enabledForAc
 		case -662113279:
 			return engine->module<FanControl1>()->enabledForAc;
+// fan1enabledForAcPressure
+		case -1997492422:
+			return engine->module<FanControl1>()->enabledForAcPressure;
 // fan1hot
 		case -1717868938:
 			return engine->module<FanControl1>()->hot;
@@ -1093,12 +1093,12 @@ float getOutputValueByHash(const int hash) {
 // fan1radiatorFanStatus
 		case -1478067590:
 			return engine->module<FanControl1>()->radiatorFanStatus;
-// fan1pwmCurvePwm
-		case 86008152:
-			return engine->module<FanControl1>()->pwmCurvePwm;
-// fan1pwmTargetPwm
-		case -850386982:
-			return engine->module<FanControl1>()->pwmTargetPwm;
+// fan1fanSpeedTarget
+		case 377338104:
+			return engine->module<FanControl1>()->fanSpeedTarget;
+// fan1fanSpeedApplied
+		case 1384010608:
+			return engine->module<FanControl1>()->fanSpeedApplied;
 // fan1pwmAppliedPwm
 		case -1368130286:
 			return engine->module<FanControl1>()->pwmAppliedPwm;
@@ -1120,6 +1120,9 @@ float getOutputValueByHash(const int hash) {
 // fan2enabledForAc
 		case 669515138:
 			return engine->module<FanControl2>()->enabledForAc;
+// fan2enabledForAcPressure
+		case -637687365:
+			return engine->module<FanControl2>()->enabledForAcPressure;
 // fan2hot
 		case -1717833001:
 			return engine->module<FanControl2>()->hot;
@@ -1135,12 +1138,12 @@ float getOutputValueByHash(const int hash) {
 // fan2radiatorFanStatus
 		case -1778606949:
 			return engine->module<FanControl2>()->radiatorFanStatus;
-// fan2pwmCurvePwm
-		case 907263673:
-			return engine->module<FanControl2>()->pwmCurvePwm;
-// fan2pwmTargetPwm
-		case 481241435:
-			return engine->module<FanControl2>()->pwmTargetPwm;
+// fan2fanSpeedTarget
+		case -1178261831:
+			return engine->module<FanControl2>()->fanSpeedTarget;
+// fan2fanSpeedApplied
+		case 1588820305:
+			return engine->module<FanControl2>()->fanSpeedApplied;
 // fan2pwmAppliedPwm
 		case -374065485:
 			return engine->module<FanControl2>()->pwmAppliedPwm;
@@ -1159,6 +1162,21 @@ float getOutputValueByHash(const int hash) {
 // ignitionOn
 		case -381519965:
 			return engine->module<FuelPumpController>()->ignitionOn;
+// isSecondaryPumpOn
+		case 2108021704:
+			return engine->module<FuelPumpController>()->isSecondaryPumpOn;
+// isFpPidActive
+		case -1198544592:
+			return engine->module<FuelPumpController>()->isFpPidActive;
+// isFpReliefActive
+		case 511613578:
+			return engine->module<FuelPumpController>()->isFpReliefActive;
+// fuelPumpDuty
+		case 456425721:
+			return engine->module<FuelPumpController>()->fuelPumpDuty;
+// fuelPressureTarget
+		case 1083687089:
+			return engine->module<FuelPumpController>()->fuelPressureTarget;
 // lua.fuelAdd
 		case 1649801578:
 			return engine->engineState.lua.fuelAdd;
@@ -1320,7 +1338,7 @@ float getOutputValueByHash(const int hash) {
 			return engine->engineState.dwellOverChargeCounter;
 // dwellActualRatio
 		case -175046954:
-			return engine->engineState.dwellActualRatio;
+			return (engine->engineState.dwellActualRatio + -1.0f) * 100.0f;
 // dcOutput0
 		case 1242329357:
 			return engine->dc_motors.dcOutput0;
@@ -1330,6 +1348,90 @@ float getOutputValueByHash(const int hash) {
 // isEnabled0
 		case 1691876092:
 			return engine->dc_motors.isEnabled0;
+// isBurstKnockActive
+		case -235151165:
+			return engine->module<BurstKnock>()->isBurstKnockActive;
+// burstKnockRetard
+		case -638105939:
+			return engine->module<BurstKnock>()->burstKnockRetard;
+// burstKnockTpsRate
+		case -864794418:
+			return engine->module<BurstKnock>()->burstKnockTpsRate;
+// engineSmEnabled
+		case -1253164602:
+			return engine->module<EngineStateMachine>()->engineSmEnabled;
+// engineSmIsOff
+		case -193409774:
+			return engine->module<EngineStateMachine>()->engineSmIsOff;
+// engineSmIsCranking
+		case 1610341604:
+			return engine->module<EngineStateMachine>()->engineSmIsCranking;
+// engineSmIsAfterStart
+		case -1247857961:
+			return engine->module<EngineStateMachine>()->engineSmIsAfterStart;
+// engineSmIsIdle
+		case -2087772747:
+			return engine->module<EngineStateMachine>()->engineSmIsIdle;
+// engineSmIsCoasting
+		case 2037158031:
+			return engine->module<EngineStateMachine>()->engineSmIsCoasting;
+// engineSmIsTransient
+		case 474716559:
+			return engine->module<EngineStateMachine>()->engineSmIsTransient;
+// engineSmIsWot
+		case -193400751:
+			return engine->module<EngineStateMachine>()->engineSmIsWot;
+// engineSmIsCruising
+		case -1907559941:
+			return engine->module<EngineStateMachine>()->engineSmIsCruising;
+// engineSmIsOverrun
+		case 350089032:
+			return engine->module<EngineStateMachine>()->engineSmIsOverrun;
+// engineSmIsLaunchControl
+		case 148191603:
+			return engine->module<EngineStateMachine>()->engineSmIsLaunchControl;
+// engineSmIsTorqueReduction
+		case 2082760068:
+			return engine->module<EngineStateMachine>()->engineSmIsTorqueReduction;
+// engineSmIsUpshifting
+		case 2014464536:
+			return engine->module<EngineStateMachine>()->engineSmIsUpshifting;
+// engineSmIsDownshifting
+		case -2046339797:
+			return engine->module<EngineStateMachine>()->engineSmIsDownshifting;
+// engineSmIsCold
+		case -2087976391:
+			return engine->module<EngineStateMachine>()->engineSmIsCold;
+// engineSmIsOperating
+		case 962048096:
+			return engine->module<EngineStateMachine>()->engineSmIsOperating;
+// engineSmIsHot
+		case -193417086:
+			return engine->module<EngineStateMachine>()->engineSmIsHot;
+// engineSmIsAccelerating
+		case 25811225:
+			return engine->module<EngineStateMachine>()->engineSmIsAccelerating;
+// engineSmIsDecelerating
+		case -1625465922:
+			return engine->module<EngineStateMachine>()->engineSmIsDecelerating;
+// engineSmCurrentState
+		case 919099231:
+			return engine->module<EngineStateMachine>()->engineSmCurrentState;
+// engineSmShiftAccumulator
+		case 1239974297:
+			return engine->module<EngineStateMachine>()->engineSmShiftAccumulator;
+// engineSmRpmRate
+		case -1550884842:
+			return engine->module<EngineStateMachine>()->engineSmRpmRate;
+// isWotEnrichmentActive
+		case 1376849540:
+			return engine->module<WotEnrichment>()->isWotEnrichmentActive;
+// wotEnrichmentTimer
+		case -1123079795:
+			return engine->module<WotEnrichment>()->wotEnrichmentTimer;
+// wotEnrichmentAfrAdder
+		case -1996371419:
+			return engine->module<WotEnrichment>()->wotEnrichmentAfrAdder;
 #if EFI_ENGINE_CONTROL
 // totalFuelCorrection
 		case -1779658835:
@@ -1382,6 +1484,12 @@ float getOutputValueByHash(const int hash) {
 // injectorHwIssue
 		case -1237512821:
 			return engine->fuelComputer.injectorHwIssue;
+// wallFuelCorrection
+		case -1361470151:
+			return engine->injectionEvents.elements[0].getWallFuel().wallFuelCorrection * 1000.0f;
+// wallFuel
+		case 2095557601:
+			return engine->injectionEvents.elements[0].getWallFuel().wallFuel * 1000.0f;
 // dtAutotuneActive
 		case 408698318:
 			return engine->module<InjectorDeadtimeAutotune>()->dtAutotuneActive;
@@ -1483,19 +1591,19 @@ float getOutputValueByHash(const int hash) {
 			return engine->module<MisfireController>()->misfireTotalCount;
 // misfireEmaUs
 		case 1057331407:
-			return engine->module<MisfireController>()->misfireEmaUs;
+			return engine->module<MisfireController>()->misfireEmaUs * 0.001f;
 // misfireLastSegUs
 		case -1971271249:
-			return engine->module<MisfireController>()->misfireLastSegUs;
+			return engine->module<MisfireController>()->misfireLastSegUs * 0.001f;
 // misfireThreshUs
 		case 1848662122:
-			return engine->module<MisfireController>()->misfireThreshUs;
+			return engine->module<MisfireController>()->misfireThreshUs * 0.001f;
 // misfireWobbleUs
 		case 675334487:
-			return engine->module<MisfireController>()->misfireWobbleUs;
+			return engine->module<MisfireController>()->misfireWobbleUs * 0.001f;
 // misfireWobbleThreshUs
 		case -783525499:
-			return engine->module<MisfireController>()->misfireWobbleThreshUs;
+			return engine->module<MisfireController>()->misfireWobbleThreshUs * 0.001f;
 #endif
 #if EFI_ENGINE_CONTROL && EFI_SHAFT_POSITION_INPUT
 // lambdaCurrentlyGood
@@ -1584,6 +1692,36 @@ float getOutputValueByHash(const int hash) {
 // trqRedIgnRetXaxisValue
 		case 892591242:
 			return engine->shiftTorqueReductionController.trqRedIgnRetXaxisValue;
+// isRollingLaunchArmed
+		case -206147908:
+			return engine->module<RollingLaunchControl>()->isRollingLaunchArmed;
+// isRollingLaunchActive
+		case 1769521423:
+			return engine->module<RollingLaunchControl>()->isRollingLaunchActive;
+// rollingLaunchSwitchState
+		case 26446954:
+			return engine->module<RollingLaunchControl>()->rollingLaunchSwitchState;
+// luaRollingLaunchState
+		case 44100218:
+			return engine->module<RollingLaunchControl>()->luaRollingLaunchState;
+// isRollingLaunchRampActive
+		case -622383905:
+			return engine->module<RollingLaunchControl>()->isRollingLaunchRampActive;
+// capturedRpm
+		case 1244730476:
+			return engine->module<RollingLaunchControl>()->capturedRpm;
+// rollingLaunchTargetRpm
+		case 1396112877:
+			return engine->module<RollingLaunchControl>()->rollingLaunchTargetRpm;
+// rollingLaunchSparkSkipRatio
+		case 528199470:
+			return engine->module<RollingLaunchControl>()->rollingLaunchSparkSkipRatio;
+// rollingLaunchTimingRetardOut
+		case -20913095:
+			return engine->module<RollingLaunchControl>()->rollingLaunchTimingRetardOut;
+// rollingLaunchRampElapsed
+		case -432387355:
+			return engine->module<RollingLaunchControl>()->rollingLaunchRampElapsed;
 #endif
 #if EFI_PROD_CODE && EFI_ELECTRONIC_THROTTLE_BODY && FULL_SD_LOGS
 // etb1etbCurrentTarget
@@ -1972,6 +2110,9 @@ float getOutputValueByHash(const int hash) {
 // vvtOutput
 		case 1990697206:
 			return engine->module<VvtController1>()->vvtOutput;
+// vvtDistance
+		case -93524688:
+			return engine->module<VvtController1>()->vvtDistance;
 #endif
 #if FULL_SD_LOGS
 // acButtonState

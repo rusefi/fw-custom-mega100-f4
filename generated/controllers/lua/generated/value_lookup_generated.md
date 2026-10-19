@@ -106,12 +106,6 @@ On some Ford and Toyota vehicles one of the throttle sensors is not linear on th
 ### overrideTriggerGaps
 
 
-### enableFan1WithAc
-Turn on this fan when AC is on.
-
-### enableFan2WithAc
-Turn on this fan when AC is on.
-
 ### enableTrailingSparks
 Enable secondary spark outputs that fire after the primary (rotaries, twin plug engines).
 
@@ -320,22 +314,28 @@ Ratio/coefficient of input voltage dividers on your PCB. For example, use '2' if
 This is the ratio of the resistors for the battery voltage, measure the voltage at the battery and then adjust this number until the gauge matches the reading.
 
 ### fanOnTemperature
-Cooling fan turn-on temperature threshold, in Celsius
+Cooling fan turn-on temperature threshold, in Celsius. Only used by the on/off relay path - ignored when PWM mode is enabled, which uses the PWM curve's own bins instead.
 
 ### fanOffTemperature
-Cooling fan turn-off temperature threshold, in Celsius
+Cooling fan turn-off temperature threshold, in Celsius. Only used by the on/off relay path - ignored when PWM mode is enabled, which uses the PWM curve's own bins instead.
 
 ### fan2OnTemperature
-Cooling fan turn-on temperature threshold, in Celsius
+Cooling fan turn-on temperature threshold, in Celsius. Only used by the on/off relay path - ignored when PWM mode is enabled, which uses the PWM curve's own bins instead.
 
 ### fan2OffTemperature
-Cooling fan turn-off temperature threshold, in Celsius
+Cooling fan turn-off temperature threshold, in Celsius. Only used by the on/off relay path - ignored when PWM mode is enabled, which uses the PWM curve's own bins instead.
 
 ### disableFan1AtSpeed
-null
+Inhibit the fan above this vehicle speed. Zero disables the check.
 
 ### disableFan2AtSpeed
-null
+Inhibit the fan above this vehicle speed. Zero disables the check.
+
+### disableFan1AtSpeedHysteresis
+Hysteresis below the disable-at-speed threshold before the fan is allowed back on. Prevents rapid on/off cycling at the threshold speed.
+
+### disableFan2AtSpeedHysteresis
+Hysteresis below the disable-at-speed threshold before the fan is allowed back on. Prevents rapid on/off cycling at the threshold speed.
 
 ### disableFan1WhenStopped
 Inhibit operation of this fan while the engine is not running.
@@ -356,28 +356,34 @@ Fan 1 PWM frequency
 Fan 2 PWM frequency
 
 ### fan1MinPwm
-Minimum PWM output clamp (Fan 1)
+PWM duty cycle meaning "fan off" (0% demand). May be greater than the full-speed duty to describe hardware that drives the fan with an inverted PWM signal (e.g. NPN transistor + pull-up: high duty = off, low duty = full speed) (Fan 1)
 
 ### fan1MaxPwm
-Maximum PWM output clamp (Fan 1)
+PWM duty cycle meaning "fan full speed" (100% demand) (Fan 1)
 
 ### fan2MinPwm
-Minimum PWM output clamp (Fan 2)
+PWM duty cycle meaning "fan off" (0% demand). May be greater than the full-speed duty to describe hardware that drives the fan with an inverted PWM signal (e.g. NPN transistor + pull-up: high duty = off, low duty = full speed) (Fan 2)
 
 ### fan2MaxPwm
-Maximum PWM output clamp (Fan 2)
-
-### fan1AcAdder
-PWM adder when AC compressor is active (Fan 1)
-
-### fan2AcAdder
-PWM adder when AC compressor is active (Fan 2)
+PWM duty cycle meaning "fan full speed" (100% demand) (Fan 2)
 
 ### fan1SoftStartSec
-Soft-start ramp time ? how long to ramp from 0 to target PWM (Fan 1)
+Time to ramp speed demand from 0 to 100% (Fan 1)
 
 ### fan2SoftStartSec
-Soft-start ramp time ? how long to ramp from 0 to target PWM (Fan 2)
+Time to ramp speed demand from 0 to 100% (Fan 2)
+
+### fan1AcPressureOn
+Pressure for relay fan turn-on or 100% PWM demand. Must exceed the off threshold.
+
+### fan1AcPressureOff
+Pressure below which relay assistance turns off, or at which PWM pressure demand reaches zero.
+
+### fan2AcPressureOn
+Pressure for relay fan turn-on or 100% PWM demand. Must exceed the off threshold.
+
+### fan2AcPressureOff
+Pressure below which relay assistance turns off, or at which PWM pressure demand reaches zero.
 
 ### wizardPanelToShow
 
@@ -527,7 +533,7 @@ Sample MAP during only one cylinder's intake per engine cycle instead of every c
 If enabled, RPM is estimated from ~90 degrees of rotation using tooth timestamps collected even before trigger sync, and fuel/ignition scheduling starts as soon as the trigger syncs (sequential ignition temporarily runs as wasted spark until full phase sync). As soon as the trigger syncs plus 90 degrees rotation, fuel and ignition events will occur. If disabled, worst case may require up to 4 full crank rotations before any events are scheduled.
 
 ### coastingFuelCutEnabled
-This setting disables fuel injection while the engine is in overrun, this is useful as a fuel saving measure and to prevent back firing.
+Enable fuel cutoff in the selected Overrun, Decel or Both mode. Coolant, MAP, tuning and Lua guards apply to every mode.
 
 ### useIacTableForCoasting
 Override the IAC position during overrun conditions to help reduce engine breaking, this can be helpful for large engines in light weight cars or engines that have trouble returning to idle.
@@ -737,13 +743,13 @@ Output Max Duty Cycle
 
 
 ### tpsAccelLookback
-How long to look back for TPS-based acceleration enrichment. Increasing this time will trigger enrichment for longer when a throttle position change occurs.
+TPS history window for additive AE. The detector selects an adjacent-sample step within this window. A longer window keeps an older step eligible longer. Zero disables additive AE. MAP Prediction derives its history from the duration curve. Lua ignores this setting.
 
 ### tpsDecelEnleanmentThreshold
 Deceleration is detected when the largest signed TPS change between adjacent samples in the history is below the negative of this threshold. Units are TPS percentage points per sample (50 ms). A zero or positive change elsewhere in the history can mask a throttle-closing step.
 
 ### tpsDecelEnleanmentMultiplier
-Magic multiplier, we multiply delta of TPS and get fuel squirt duration
+Scale fuel reduction from the selected TPS closing step in additive modes. Larger values increase reduction. RPM and flex multipliers also apply. Fractional-pump processing can suppress the reduction. This setting is independent of DFCO and ignored by MAP Prediction and Lua.
 
 ### noFuelTrimAfterDfcoTime
 Pause closed loop fueling after deceleration fuel cut occurs. Set this to a little longer than however long is required for normal fueling behavior to resume after fuel cut.
@@ -947,7 +953,7 @@ This enables the various ignition corrections during cranking (IAT, CLT and PID 
 Enable flex-fuel compensation for engine start. When on (and a flex fuel sensor is present) the cranking coolant multiplier and the priming pulse mass each come from a 2D table over coolant and ethanol % (crankingFuelFlexTable / primeFlexTable, 4-row ethanol axis) instead of their 1D coolant curves. When off, the 1D curves (crankingFuelCoef / primeValues) are used.
 
 ### flexFuelTransientComp
-Enable flex-fuel transient fueling compensation (acceleration enrichment and wall wetting tau/beta) based on ethanol content and coolant temperature.
+Shared CLT/ethanol compensation for additive TPS AE and wall-film tau/beta. AE multiplier applies only to MS/Percent Adder. tau/beta apply in every AE strategy and Basic/Advanced. Requires a registered ethanol sensor. Does not control base stoichiometry, cranking or priming.
 
 ### useIacPidMultTable
 This flag allows to use a special 'PID Multiplier' table (0.0-1.0) to compensate for nonlinear nature of IAC-RPM controller
@@ -1043,7 +1049,7 @@ null
 Duration in ms or duty cycle depending on selected mode
 
 ### wwaeTau
-Length of time the deposited wall fuel takes to dissipate after the start of acceleration.
+Evaporation time constant for the Basic fuel-film model, in seconds. Higher values make the film respond more slowly. This is an exponential time constant, not the time for all deposited fuel to evaporate. Effective values below 0.01 bypass compensation.
 
 ### alternatorControl.pFactor
 
@@ -1127,7 +1133,7 @@ Output Min Duty Cycle
 Output Max Duty Cycle
 
 ### wwaeBeta
-0 = No fuel settling on port walls 1 = All the fuel settling on port walls setting this to 0 disables the wall wetting enrichment.
+Fraction of injected fuel deposited on the wall in the Basic model. 0.20 represents 20%. Larger values increase modeled deposition. Effective values below 0.01 bypass compensation. Downstream controller limits still apply.
 
 ### throttlePedalUpVoltage
 
@@ -1523,10 +1529,10 @@ Output Max Duty Cycle
 When entering idle, and the PID settings are aggressive, it's good to make a soft entry upon entering closed loop
 
 ### tpsAccelFractionPeriod
-A delay in cycles between fuel-enrich. portions
+Spread each additive enrichment portion evenly across this number of engine cycles. Higher values reduce delivery per cycle and spread it longer. Period 1 and divisor 1 disable fractional spreading. Ignored by MAP Prediction and Lua.
 
 ### tpsAccelFractionDivisor
-A fraction divisor: 1 or less = entire portion at once, or split into diminishing fractions
+Divide accumulated additive enrichment into diminishing portions. 1 delivers a full portion. Larger values reduce the initial delivery and extend the tail. With period 1 and divisor 2: 1/2, 1/4, 1/8. Ignored by MAP Prediction and Lua.
 
 ### idlerpmpid_iTermMin
 iTerm min value
@@ -1837,6 +1843,9 @@ Pull-up resistor value on your board
 ### speedometerPulsePerKm
 Number of speedometer pulses per kilometer travelled.
 
+### speedometerBenchTestFrequency
+Frequency used by the "Test Speedo" bench test button, pulsed for a fixed duration.
+
 ### ignKeyAdcDivider
 null
 
@@ -1950,6 +1959,18 @@ By default the idle solenoid is switched off whenever the engine is not turning,
 
 ### canSnifferIncludeBus
 Include CAN bus in trace using Elmue SLCAN prefixes (CAN1: none, CAN2: &, CAN3: $). Disable for standard SLCAN clients such as SavvyCAN or slcand. Reconnect the sniffer after changing this setting.
+
+### gearDetectionUseOutputShaftSpeed
+Driveshaft reference for gear detection. Main Vehicle Speed uses wheel revolutions/km and final drive ratio. Output Shaft Speed reads shaft RPM directly and requires an OSS provider.
+
+### gearDetectionRpmSourceIsInputShaftSpeed
+RPM source when Speed Source is Output Shaft Speed. Main Vehicle Speed retains automatic input-shaft selection when that sensor is registered.
+
+### transmissionSlipDetectionEnabled
+Compare the selected Slip RPM Source with expected RPM for the detected gear. Requires Speed Source = Output Shaft Speed, a valid gear and the minimum vehicle speed. Wheel-based references cannot identify transmission slip.
+
+### transmissionSlipRpmSourceIsInputShaftSpeed
+Input Shaft Speed measures internal gearbox slip. Engine RPM also includes clutch or torque-converter slip. Accurate gear ratios are required.
 
 ### nitrousLuaGaugeArmingValue
 
@@ -2109,6 +2130,198 @@ Dwell Duty Mode: percentage of the inter-spark interval used as coil dwell time.
 
 ### idleParkNeutralOffset
 Signed idle position offset when Lua reports Park or Neutral via setParkNeutral(boolean). Negative values reduce opening, positive values increase it. Added to running open-loop idle, not target RPM. Zero disables the correction.
+
+### transmissionSlipMinVss
+Below this vehicle speed, transmission slip is invalid. Zero is reset to the 5 km/h default.
+
+### outputShaftSpeedSensorTeeth
+Pulses per output-shaft revolution.
+
+### ossFilterReciprocal
+Output-shaft low-pass filter reciprocal. Higher values average more teeth.
+
+### rollingLaunchEnabled
+Hold a captured RPM window while moving with the activation switch or Lua trigger held.
+
+### rollingLaunchTimingRetard
+Ignition timing removed while armed. This is relative retard, not an absolute timing target.
+
+### rollingLaunchFuelAdderPercent
+Additional fuel while armed. Removed immediately when disarmed.
+
+### rollingLaunchRampOutTime
+Time for the timing retard to decay to zero after release or loss of an arming gate. Zero removes retard immediately.
+
+### rollingLaunchRpmWindow
+RPM above the captured arming RPM where spark skip reaches 100%. Zero requests a hard cut at the captured RPM.
+
+### rollingLaunchMinArmRpm
+Minimum RPM while the trigger is held. Crossing this gate can arm without another button press.
+
+### rollingLaunchMaxRpm
+Maximum captured target RPM. The normal rev limiter remains independent.
+
+### rollingLaunchMinVss
+Minimum vehicle speed while the trigger is held. Requires valid vehicle speed.
+
+### tpsExpAverageAlpha
+Exponential smoothing applied independently to TPS1 and TPS2 on each resolved sensor read.\n1 passes readings through. Lower values add smoothing and feedback delay. This is not a fixed-rate filter.
+
+### tpsExpAverageResetThreshold
+If TPS changes by at least this much within tpsExpAverageResetTimeMs, the ExpAverage filter resets and jumps straight to the new raw value instead of smoothing into it. Set to 0 to disable.
+
+### tpsExpAverageResetTimeMs
+Time window for tpsExpAverageResetThreshold - a change of that size within this many milliseconds triggers an immediate ExpAverage reset. Set to 0 to disable.
+
+### burstKnockEnabled
+Pull ignition timing while the TPS acceleration-enrichment threshold is exceeded, then decay the retard to zero. This uses the TPS delta and lookback, not acoustic knock detection.
+
+### burstKnockDecayTime
+Linear decay time measured from the last above-threshold TPS sample. Zero removes retard as soon as the transient ends.
+
+### useEngineStateMachine
+Classify engine operating state and recognize shifts. State-based STFT is separately enabled below.
+
+### smWotTpsThreshold
+Engine SM: TPS threshold above which the engine is at Wide Open Throttle.
+
+### stateBasedStft
+Engine SM: drive STFT region selection from the live SM state (Idle/Overrun/WOT/Cruise) instead of the RPM/load region thresholds. The per-region STFT settings (time constant, max add/remove) are reused unchanged.
+
+### smSecondClutchSwitchAvailable
+Engine SM: a second clutch switch is also wired (e.g. both Clutch-Up and Clutch-Down, not just whichever is selected below). Lets shift detection open the window on the earliest available press edge and close it on the earliest available release edge, instead of relying solely on the configured switch's own edges.
+
+### smRelatchOnClutchDown
+Engine SM: while the shift latch (smShiftLatchTimeMs) is active, a fresh Clutch-Down full-press resets it back to the full duration instead of letting it expire -- keeps Upshifting/Downshifting asserted through a flurry of quick consecutive shifts. Requires smSecondClutchSwitchAvailable (both Clutch-Up and Clutch-Down wired).
+
+### smAccelRateThreshold
+Engine SM: RPM/s rate threshold to enter the Accelerating state. Also the accumulator gain normalizer while accelerating -- at exactly this rate the accumulator climbs at smAccumulatorGain pct/s, faster rates climb proportionally faster. 0 disables the Accelerating state. In VSS Rate mode this numeric value also normalizes the accumulator signal in km/h/s.
+
+### smDecelRateThreshold
+Engine SM: RPM/s rate threshold to enter the Decelerating state (RPM falling faster than this). Also the accumulator normalizer in Overrun. 0 disables the Decelerating state. In VSS Rate mode this numeric value also normalizes the accumulator signal in km/h/s.
+
+### smRpmRateWindowMs
+Engine SM: Time window used to compute RPM rate of change (RPM/s, "RPM/t") for Accelerating/Decelerating state detection and the RPM-rate shift-accumulator signal. Larger values smooth out sensor/tooth noise at the cost of slower response, smaller values track faster but are noisier. Internally floored to one slow-callback tick (50 ms). smAccelRateThreshold/smDecelRateThreshold stay in RPM/s regardless of this setting and do not need re-tuning when it changes.
+
+### smShiftLatchTimeMs
+Engine SM: once shift direction is confirmed, hold Upshifting/Downshifting true for at least this long. 0 = no latch.
+
+### smTransientHoldTimeMs
+Engine SM: time to hold the Transient state after the accel-enrichment threshold drops. 0 = no hold.
+
+### smShiftMinVss
+Engine SM: VSS Rate mode only -- minimum vehicle speed. Below this the accumulator decays instead of accumulating. 0 = no minimum.
+
+### smAccumulatorUpshiftThreshold
+Engine SM: Accumulator must reach or exceed this value (0..100) to confirm an upshift. The accumulator runs from -100 to +100.
+
+### smAccumulatorDownshiftThreshold
+Engine SM: Accumulator must reach or fall below the negative of this value (0..100) to confirm a downshift.
+
+### smAccelHoldMs
+Engine SM: once the Accelerating rate threshold is met, hold the Accelerating state for at least this long after the rate drops back below threshold. A fresh threshold crossing during the hold resets it back to the full duration. Broken immediately by a lift into the Coasting/Overrun phase, so a stale hold can never mask Overrun/DFCO. 0 = no hold (raw signal, legacy behavior).
+
+### smAccumulatorGain
+Engine SM: Accumulator climb rate in %/s per 1x threshold ratio. At exactly the threshold rate, the accumulator changes by this many %/s. Larger = faster response.
+
+### smAccumulatorDecayRate
+Engine SM: Rate at which the accumulator decays toward 0 (%/s) when the signal is within the ±threshold dead-band. Larger = faster decay.
+
+### smAccumulatorSnapTimeMs
+Engine SM: once continuously in the Accelerating state for this long, a still-negative accumulator (left over from a prior decel run) is forced to 0 instead of waiting for it to decay/climb across zero on its own. Symmetrically, once continuously in Decelerating or Overrun for this long, a still-positive accumulator is forced to 0. Lets a same-gear direction reversal (e.g. a long overrun immediately followed by acceleration) shed a large stale opposite-sign accumulator quickly, rather than needing an equally long run the other way to null it out and risking a stale shift-direction call (e.g. a spurious downshift blip on clutch-in right after tipping back into the throttle). 0 = disabled (legacy decay/cross-only behavior).
+
+### smColdTempThreshold
+Engine Temperature Overlay: CLT below this is Cold engine. Between this and smHotTempThreshold is Operating temperature.
+
+### smHotTempThreshold
+Engine Temperature Overlay: CLT above this is Hot engine. Below smColdTempThreshold is Cold, between both is Operating temperature.
+
+### wotEnrichmentEnabled
+Add an AFR offset according to continuous time in the Engine State Machine WOT state. Requires Enable Engine State Machine. Negative values richen; positive values lean. Leaving WOT resets the timer and offset.
+
+### vvtAdvancedModeEnabled
+VVT Advanced Mode: master enable. Replaces the fixed PID offset (Hold Duty) with an oil-pressure-based base duty curve, and the fixed PID P factor with a distance-from-target P factor curve.
+
+### vvtIntake_iTermMin
+Intake VVT integral minimum. Both integral limits zero restore defaults of -1000 and 1000.
+
+### vvtIntake_iTermMax
+Intake VVT integral maximum. Applies in both basic and advanced modes.
+
+### vvtExhaust_iTermMin
+Exhaust VVT integral minimum. Both integral limits zero restore defaults of -1000 and 1000.
+
+### vvtExhaust_iTermMax
+Exhaust VVT integral maximum. Applies in both basic and advanced modes.
+
+### coastingFuelCutRequiresGear
+Require a valid DetectedGear greater than zero for the Overrun path. Neutral, unknown or invalid gear prevents overrun fuel cut. Configure gear detection before enabling. Does not restrict the Decel path.
+
+### secondaryFpActivationRpm
+Secondary pump engages only when RPM, fueling load and TPS all exceed their thresholds.
+
+### secondaryFpActivationLoad
+Fueling-load threshold for the secondary pump. Speed Density uses MAP in kPa, other fueling algorithms use their own load scale.
+
+### secondaryFpActivationTps
+TPS threshold for the secondary pump.
+
+### secondaryFpTpsHysteresis
+Secondary pump releases when any input falls below its activation threshold minus hysteresis.
+
+### secondaryFpRpmHysteresis
+RPM release hysteresis for the secondary pump.
+
+### secondaryFpLoadHysteresis
+Fueling-load release hysteresis for the secondary pump.
+
+### fuelPumpPwmFrequency
+PWM command frequency. Use a compatible pump controller or power driver and its specified frequency. Burn frequency changes.
+
+### fuelPumpMinDuty
+Minimum duty while pressure control is active, including relief or an invalid control result. An inactive pump always receives zero duty.
+
+### fuelPumpMaxDuty
+Maximum running duty and key-on prime duty.
+
+### fuelPumpControl.pFactor
+
+
+### fuelPumpControl.iFactor
+
+
+### fuelPumpControl.dFactor
+
+
+### fuelPumpControl.offset
+Linear addition to PID logic\nAlso known as feedforward.
+
+### fuelPumpControl.periodMs
+PID dTime
+
+### fuelPumpControl.minValue
+Output Min Duty Cycle
+
+### fuelPumpControl.maxValue
+Output Max Duty Cycle
+
+### fuelPump_iTermMin
+Minimum integral correction.
+
+### fuelPump_iTermMax
+Maximum integral correction.
+
+### fuelPumpAggressiveRelief
+Hold minimum active duty during low-demand overpressure. Intended for returnless systems. Feedback resumes below the recovery threshold or when fuel demand increases.
+
+### fuelPumpReliefMaxInjectedMass
+Relief is eligible below this injected mass per cycle.
+
+### fuelPumpReliefEngageOverpressure
+Engage relief above target pressure plus this value.
+
+### fuelPumpReliefRecoverOverpressure
+Release relief at or below target plus this value. Set below the engagement threshold.
 
 ### tcu_shiftTime
 

@@ -112,12 +112,6 @@ float getConfigValueByHash(const int hash) {
 // overrideTriggerGaps
 		case 1362186948:
 			return engineConfiguration->overrideTriggerGaps;
-// enableFan1WithAc
-		case -298185774:
-			return engineConfiguration->enableFan1WithAc;
-// enableFan2WithAc
-		case 993282195:
-			return engineConfiguration->enableFan2WithAc;
 // enableTrailingSparks
 		case -1409016614:
 			return engineConfiguration->enableTrailingSparks;
@@ -343,6 +337,12 @@ float getConfigValueByHash(const int hash) {
 // disableFan2AtSpeed
 		case -1906717594:
 			return engineConfiguration->disableFan2AtSpeed;
+// disableFan1AtSpeedHysteresis
+		case -791235688:
+			return engineConfiguration->disableFan1AtSpeedHysteresis;
+// disableFan2AtSpeedHysteresis
+		case -1091775047:
+			return engineConfiguration->disableFan2AtSpeedHysteresis;
 // disableFan1WhenStopped
 		case -1132710384:
 			return engineConfiguration->disableFan1WhenStopped;
@@ -373,18 +373,24 @@ float getConfigValueByHash(const int hash) {
 // fan2MaxPwm
 		case -2020267706:
 			return engineConfiguration->fan2MaxPwm;
-// fan1AcAdder
-		case -180298801:
-			return engineConfiguration->fan1AcAdder;
-// fan2AcAdder
-		case -511528784:
-			return engineConfiguration->fan2AcAdder;
 // fan1SoftStartSec
 		case 1115446416:
 			return engineConfiguration->fan1SoftStartSec;
 // fan2SoftStartSec
 		case -1847892463:
 			return engineConfiguration->fan2SoftStartSec;
+// fan1AcPressureOn
+		case -1038743867:
+			return engineConfiguration->fan1AcPressureOn;
+// fan1AcPressureOff
+		case 81190595:
+			return engineConfiguration->fan1AcPressureOff;
+// fan2AcPressureOn
+		case 292884550:
+			return engineConfiguration->fan2AcPressureOn;
+// fan2AcPressureOff
+		case 1075255396:
+			return engineConfiguration->fan2AcPressureOff;
 // wizardPanelToShow
 		case 727066858:
 			return engineConfiguration->wizardPanelToShow;
@@ -1843,6 +1849,9 @@ float getConfigValueByHash(const int hash) {
 // speedometerPulsePerKm
 		case 1007396714:
 			return engineConfiguration->speedometerPulsePerKm;
+// speedometerBenchTestFrequency
+		case 1058707540:
+			return engineConfiguration->speedometerBenchTestFrequency;
 // ignKeyAdcDivider
 		case -506535813:
 			return engineConfiguration->ignKeyAdcDivider;
@@ -1957,6 +1966,18 @@ float getConfigValueByHash(const int hash) {
 // canSnifferIncludeBus
 		case -1408814862:
 			return engineConfiguration->canSnifferIncludeBus;
+// gearDetectionUseOutputShaftSpeed
+		case 209205704:
+			return engineConfiguration->gearDetectionUseOutputShaftSpeed;
+// gearDetectionRpmSourceIsInputShaftSpeed
+		case -97064362:
+			return engineConfiguration->gearDetectionRpmSourceIsInputShaftSpeed;
+// transmissionSlipDetectionEnabled
+		case 1972642993:
+			return engineConfiguration->transmissionSlipDetectionEnabled;
+// transmissionSlipRpmSourceIsInputShaftSpeed
+		case -1388601766:
+			return engineConfiguration->transmissionSlipRpmSourceIsInputShaftSpeed;
 // nitrousLuaGaugeArmingValue
 		case -1760115393:
 			return engineConfiguration->nitrousLuaGaugeArmingValue;
@@ -2116,6 +2137,198 @@ float getConfigValueByHash(const int hash) {
 // idleParkNeutralOffset
 		case 1550171219:
 			return engineConfiguration->idleParkNeutralOffset;
+// transmissionSlipMinVss
+		case -838086233:
+			return engineConfiguration->transmissionSlipMinVss;
+// outputShaftSpeedSensorTeeth
+		case -304117647:
+			return engineConfiguration->outputShaftSpeedSensorTeeth;
+// ossFilterReciprocal
+		case 209259268:
+			return engineConfiguration->ossFilterReciprocal;
+// rollingLaunchEnabled
+		case -905762494:
+			return engineConfiguration->rollingLaunchEnabled;
+// rollingLaunchTimingRetard
+		case -13147103:
+			return engineConfiguration->rollingLaunchTimingRetard;
+// rollingLaunchFuelAdderPercent
+		case 791499668:
+			return engineConfiguration->rollingLaunchFuelAdderPercent;
+// rollingLaunchRampOutTime
+		case -27725394:
+			return engineConfiguration->rollingLaunchRampOutTime;
+// rollingLaunchRpmWindow
+		case -422720642:
+			return engineConfiguration->rollingLaunchRpmWindow;
+// rollingLaunchMinArmRpm
+		case 1155403530:
+			return engineConfiguration->rollingLaunchMinArmRpm;
+// rollingLaunchMaxRpm
+		case 1702718700:
+			return engineConfiguration->rollingLaunchMaxRpm;
+// rollingLaunchMinVss
+		case 1711851159:
+			return engineConfiguration->rollingLaunchMinVss;
+// tpsExpAverageAlpha
+		case -744998550:
+			return engineConfiguration->tpsExpAverageAlpha;
+// tpsExpAverageResetThreshold
+		case 1996846292:
+			return engineConfiguration->tpsExpAverageResetThreshold;
+// tpsExpAverageResetTimeMs
+		case -518225834:
+			return engineConfiguration->tpsExpAverageResetTimeMs;
+// burstKnockEnabled
+		case 1137841654:
+			return engineConfiguration->burstKnockEnabled;
+// burstKnockDecayTime
+		case 1450535776:
+			return engineConfiguration->burstKnockDecayTime;
+// useEngineStateMachine
+		case 940343550:
+			return engineConfiguration->useEngineStateMachine;
+// smWotTpsThreshold
+		case -2047550909:
+			return engineConfiguration->smWotTpsThreshold;
+// stateBasedStft
+		case -677524570:
+			return engineConfiguration->stateBasedStft;
+// smSecondClutchSwitchAvailable
+		case -986298825:
+			return engineConfiguration->smSecondClutchSwitchAvailable;
+// smRelatchOnClutchDown
+		case 600304416:
+			return engineConfiguration->smRelatchOnClutchDown;
+// smAccelRateThreshold
+		case -1256577386:
+			return engineConfiguration->smAccelRateThreshold;
+// smDecelRateThreshold
+		case -1525657349:
+			return engineConfiguration->smDecelRateThreshold;
+// smRpmRateWindowMs
+		case -1700556168:
+			return engineConfiguration->smRpmRateWindowMs;
+// smShiftLatchTimeMs
+		case 312269950:
+			return engineConfiguration->smShiftLatchTimeMs;
+// smTransientHoldTimeMs
+		case 683461331:
+			return engineConfiguration->smTransientHoldTimeMs;
+// smShiftMinVss
+		case 1238442211:
+			return engineConfiguration->smShiftMinVss;
+// smAccumulatorUpshiftThreshold
+		case -93465099:
+			return engineConfiguration->smAccumulatorUpshiftThreshold;
+// smAccumulatorDownshiftThreshold
+		case 61699784:
+			return engineConfiguration->smAccumulatorDownshiftThreshold;
+// smAccelHoldMs
+		case -1160082044:
+			return engineConfiguration->smAccelHoldMs;
+// smAccumulatorGain
+		case -1309258940:
+			return engineConfiguration->smAccumulatorGain;
+// smAccumulatorDecayRate
+		case 1567309239:
+			return engineConfiguration->smAccumulatorDecayRate;
+// smAccumulatorSnapTimeMs
+		case -38731098:
+			return engineConfiguration->smAccumulatorSnapTimeMs;
+// smColdTempThreshold
+		case -195854998:
+			return engineConfiguration->smColdTempThreshold;
+// smHotTempThreshold
+		case 1186627731:
+			return engineConfiguration->smHotTempThreshold;
+// wotEnrichmentEnabled
+		case -979032745:
+			return engineConfiguration->wotEnrichmentEnabled;
+// vvtAdvancedModeEnabled
+		case -2075222549:
+			return engineConfiguration->vvtAdvancedModeEnabled;
+// vvtIntake_iTermMin
+		case -1830011739:
+			return engineConfiguration->vvtIntake_iTermMin;
+// vvtIntake_iTermMax
+		case -1830011993:
+			return engineConfiguration->vvtIntake_iTermMax;
+// vvtExhaust_iTermMin
+		case -1814511221:
+			return engineConfiguration->vvtExhaust_iTermMin;
+// vvtExhaust_iTermMax
+		case -1814511475:
+			return engineConfiguration->vvtExhaust_iTermMax;
+// coastingFuelCutRequiresGear
+		case 1353927396:
+			return engineConfiguration->coastingFuelCutRequiresGear;
+// secondaryFpActivationRpm
+		case 503101220:
+			return engineConfiguration->secondaryFpActivationRpm;
+// secondaryFpActivationLoad
+		case -577745931:
+			return engineConfiguration->secondaryFpActivationLoad;
+// secondaryFpActivationTps
+		case 503103404:
+			return engineConfiguration->secondaryFpActivationTps;
+// secondaryFpTpsHysteresis
+		case -437130995:
+			return engineConfiguration->secondaryFpTpsHysteresis;
+// secondaryFpRpmHysteresis
+		case 654808709:
+			return engineConfiguration->secondaryFpRpmHysteresis;
+// secondaryFpLoadHysteresis
+		case -479316394:
+			return engineConfiguration->secondaryFpLoadHysteresis;
+// fuelPumpPwmFrequency
+		case -847641639:
+			return engineConfiguration->fuelPumpPwmFrequency;
+// fuelPumpMinDuty
+		case -1648021571:
+			return engineConfiguration->fuelPumpMinDuty;
+// fuelPumpMaxDuty
+		case -1949245505:
+			return engineConfiguration->fuelPumpMaxDuty;
+// fuelPumpControl.pFactor
+		case 84173873:
+			return engineConfiguration->fuelPumpControl.pFactor;
+// fuelPumpControl.iFactor
+		case -366167318:
+			return engineConfiguration->fuelPumpControl.iFactor;
+// fuelPumpControl.dFactor
+		case 1766427429:
+			return engineConfiguration->fuelPumpControl.dFactor;
+// fuelPumpControl.offset
+		case -1077592247:
+			return engineConfiguration->fuelPumpControl.offset;
+// fuelPumpControl.periodMs
+		case -2136471963:
+			return engineConfiguration->fuelPumpControl.periodMs;
+// fuelPumpControl.minValue
+		case -413496189:
+			return engineConfiguration->fuelPumpControl.minValue;
+// fuelPumpControl.maxValue
+		case -1763951419:
+			return engineConfiguration->fuelPumpControl.maxValue;
+// fuelPump_iTermMin
+		case -1795541801:
+			return engineConfiguration->fuelPump_iTermMin;
+// fuelPump_iTermMax
+		case -1795542055:
+			return engineConfiguration->fuelPump_iTermMax;
+// fuelPumpAggressiveRelief
+		case 668125882:
+			return engineConfiguration->fuelPumpAggressiveRelief;
+// fuelPumpReliefMaxInjectedMass
+		case -2119617526:
+			return engineConfiguration->fuelPumpReliefMaxInjectedMass;
+// fuelPumpReliefEngageOverpressure
+		case -1292368058:
+			return engineConfiguration->fuelPumpReliefEngageOverpressure;
+// fuelPumpReliefRecoverOverpressure
+		case -1248973931:
+			return engineConfiguration->fuelPumpReliefRecoverOverpressure;
 // tcu_shiftTime
 		case -1658957891:
 			return config->tcu_shiftTime;
@@ -2409,16 +2622,6 @@ bool setConfigValueByName(const char *name, float value) {
 		case 1362186948:
 	{
 		engineConfiguration->overrideTriggerGaps = (int)value;
-		return 1;
-	}
-		case -298185774:
-	{
-		engineConfiguration->enableFan1WithAc = (int)value;
-		return 1;
-	}
-		case 993282195:
-	{
-		engineConfiguration->enableFan2WithAc = (int)value;
 		return 1;
 	}
 		case -1409016614:
@@ -2796,6 +2999,16 @@ bool setConfigValueByName(const char *name, float value) {
 		engineConfiguration->disableFan2AtSpeed = (int)value;
 		return 1;
 	}
+		case -791235688:
+	{
+		engineConfiguration->disableFan1AtSpeedHysteresis = (int)value;
+		return 1;
+	}
+		case -1091775047:
+	{
+		engineConfiguration->disableFan2AtSpeedHysteresis = (int)value;
+		return 1;
+	}
 		case -1132710384:
 	{
 		engineConfiguration->disableFan1WhenStopped = (int)value;
@@ -2846,16 +3059,6 @@ bool setConfigValueByName(const char *name, float value) {
 		engineConfiguration->fan2MaxPwm = (int)value;
 		return 1;
 	}
-		case -180298801:
-	{
-		engineConfiguration->fan1AcAdder = (int)value;
-		return 1;
-	}
-		case -511528784:
-	{
-		engineConfiguration->fan2AcAdder = (int)value;
-		return 1;
-	}
 		case 1115446416:
 	{
 		engineConfiguration->fan1SoftStartSec = value;
@@ -2864,6 +3067,26 @@ bool setConfigValueByName(const char *name, float value) {
 		case -1847892463:
 	{
 		engineConfiguration->fan2SoftStartSec = value;
+		return 1;
+	}
+		case -1038743867:
+	{
+		engineConfiguration->fan1AcPressureOn = (int)value;
+		return 1;
+	}
+		case 81190595:
+	{
+		engineConfiguration->fan1AcPressureOff = (int)value;
+		return 1;
+	}
+		case 292884550:
+	{
+		engineConfiguration->fan2AcPressureOn = (int)value;
+		return 1;
+	}
+		case 1075255396:
+	{
+		engineConfiguration->fan2AcPressureOff = (int)value;
 		return 1;
 	}
 		case 727066858:
@@ -5296,6 +5519,11 @@ bool setConfigValueByName(const char *name, float value) {
 		engineConfiguration->speedometerPulsePerKm = (int)value;
 		return 1;
 	}
+		case 1058707540:
+	{
+		engineConfiguration->speedometerBenchTestFrequency = (int)value;
+		return 1;
+	}
 		case -506535813:
 	{
 		engineConfiguration->ignKeyAdcDivider = value;
@@ -5484,6 +5712,26 @@ bool setConfigValueByName(const char *name, float value) {
 		case -1408814862:
 	{
 		engineConfiguration->canSnifferIncludeBus = (int)value;
+		return 1;
+	}
+		case 209205704:
+	{
+		engineConfiguration->gearDetectionUseOutputShaftSpeed = (int)value;
+		return 1;
+	}
+		case -97064362:
+	{
+		engineConfiguration->gearDetectionRpmSourceIsInputShaftSpeed = (int)value;
+		return 1;
+	}
+		case 1972642993:
+	{
+		engineConfiguration->transmissionSlipDetectionEnabled = (int)value;
+		return 1;
+	}
+		case -1388601766:
+	{
+		engineConfiguration->transmissionSlipRpmSourceIsInputShaftSpeed = (int)value;
 		return 1;
 	}
 		case -1760115393:
@@ -5749,6 +5997,326 @@ bool setConfigValueByName(const char *name, float value) {
 		case 1550171219:
 	{
 		engineConfiguration->idleParkNeutralOffset = value;
+		return 1;
+	}
+		case -838086233:
+	{
+		engineConfiguration->transmissionSlipMinVss = (int)value;
+		return 1;
+	}
+		case -304117647:
+	{
+		engineConfiguration->outputShaftSpeedSensorTeeth = (int)value;
+		return 1;
+	}
+		case 209259268:
+	{
+		engineConfiguration->ossFilterReciprocal = (int)value;
+		return 1;
+	}
+		case -905762494:
+	{
+		engineConfiguration->rollingLaunchEnabled = (int)value;
+		return 1;
+	}
+		case -13147103:
+	{
+		engineConfiguration->rollingLaunchTimingRetard = (int)value;
+		return 1;
+	}
+		case 791499668:
+	{
+		engineConfiguration->rollingLaunchFuelAdderPercent = (int)value;
+		return 1;
+	}
+		case -27725394:
+	{
+		engineConfiguration->rollingLaunchRampOutTime = (int)value;
+		return 1;
+	}
+		case -422720642:
+	{
+		engineConfiguration->rollingLaunchRpmWindow = (int)value;
+		return 1;
+	}
+		case 1155403530:
+	{
+		engineConfiguration->rollingLaunchMinArmRpm = (int)value;
+		return 1;
+	}
+		case 1702718700:
+	{
+		engineConfiguration->rollingLaunchMaxRpm = (int)value;
+		return 1;
+	}
+		case 1711851159:
+	{
+		engineConfiguration->rollingLaunchMinVss = (int)value;
+		return 1;
+	}
+		case -744998550:
+	{
+		engineConfiguration->tpsExpAverageAlpha = value;
+		return 1;
+	}
+		case 1996846292:
+	{
+		engineConfiguration->tpsExpAverageResetThreshold = value;
+		return 1;
+	}
+		case -518225834:
+	{
+		engineConfiguration->tpsExpAverageResetTimeMs = value;
+		return 1;
+	}
+		case 1137841654:
+	{
+		engineConfiguration->burstKnockEnabled = (int)value;
+		return 1;
+	}
+		case 1450535776:
+	{
+		engineConfiguration->burstKnockDecayTime = (int)value;
+		return 1;
+	}
+		case 940343550:
+	{
+		engineConfiguration->useEngineStateMachine = (int)value;
+		return 1;
+	}
+		case -2047550909:
+	{
+		engineConfiguration->smWotTpsThreshold = (int)value;
+		return 1;
+	}
+		case -677524570:
+	{
+		engineConfiguration->stateBasedStft = (int)value;
+		return 1;
+	}
+		case -986298825:
+	{
+		engineConfiguration->smSecondClutchSwitchAvailable = (int)value;
+		return 1;
+	}
+		case 600304416:
+	{
+		engineConfiguration->smRelatchOnClutchDown = (int)value;
+		return 1;
+	}
+		case -1256577386:
+	{
+		engineConfiguration->smAccelRateThreshold = (int)value;
+		return 1;
+	}
+		case -1525657349:
+	{
+		engineConfiguration->smDecelRateThreshold = (int)value;
+		return 1;
+	}
+		case -1700556168:
+	{
+		engineConfiguration->smRpmRateWindowMs = (int)value;
+		return 1;
+	}
+		case 312269950:
+	{
+		engineConfiguration->smShiftLatchTimeMs = (int)value;
+		return 1;
+	}
+		case 683461331:
+	{
+		engineConfiguration->smTransientHoldTimeMs = (int)value;
+		return 1;
+	}
+		case 1238442211:
+	{
+		engineConfiguration->smShiftMinVss = (int)value;
+		return 1;
+	}
+		case -93465099:
+	{
+		engineConfiguration->smAccumulatorUpshiftThreshold = (int)value;
+		return 1;
+	}
+		case 61699784:
+	{
+		engineConfiguration->smAccumulatorDownshiftThreshold = (int)value;
+		return 1;
+	}
+		case -1160082044:
+	{
+		engineConfiguration->smAccelHoldMs = (int)value;
+		return 1;
+	}
+		case -1309258940:
+	{
+		engineConfiguration->smAccumulatorGain = value;
+		return 1;
+	}
+		case 1567309239:
+	{
+		engineConfiguration->smAccumulatorDecayRate = value;
+		return 1;
+	}
+		case -38731098:
+	{
+		engineConfiguration->smAccumulatorSnapTimeMs = (int)value;
+		return 1;
+	}
+		case -195854998:
+	{
+		engineConfiguration->smColdTempThreshold = (int)value;
+		return 1;
+	}
+		case 1186627731:
+	{
+		engineConfiguration->smHotTempThreshold = (int)value;
+		return 1;
+	}
+		case -979032745:
+	{
+		engineConfiguration->wotEnrichmentEnabled = (int)value;
+		return 1;
+	}
+		case -2075222549:
+	{
+		engineConfiguration->vvtAdvancedModeEnabled = (int)value;
+		return 1;
+	}
+		case -1830011739:
+	{
+		engineConfiguration->vvtIntake_iTermMin = (int)value;
+		return 1;
+	}
+		case -1830011993:
+	{
+		engineConfiguration->vvtIntake_iTermMax = (int)value;
+		return 1;
+	}
+		case -1814511221:
+	{
+		engineConfiguration->vvtExhaust_iTermMin = (int)value;
+		return 1;
+	}
+		case -1814511475:
+	{
+		engineConfiguration->vvtExhaust_iTermMax = (int)value;
+		return 1;
+	}
+		case 1353927396:
+	{
+		engineConfiguration->coastingFuelCutRequiresGear = (int)value;
+		return 1;
+	}
+		case 503101220:
+	{
+		engineConfiguration->secondaryFpActivationRpm = (int)value;
+		return 1;
+	}
+		case -577745931:
+	{
+		engineConfiguration->secondaryFpActivationLoad = (int)value;
+		return 1;
+	}
+		case 503103404:
+	{
+		engineConfiguration->secondaryFpActivationTps = (int)value;
+		return 1;
+	}
+		case -437130995:
+	{
+		engineConfiguration->secondaryFpTpsHysteresis = (int)value;
+		return 1;
+	}
+		case 654808709:
+	{
+		engineConfiguration->secondaryFpRpmHysteresis = (int)value;
+		return 1;
+	}
+		case -479316394:
+	{
+		engineConfiguration->secondaryFpLoadHysteresis = (int)value;
+		return 1;
+	}
+		case -847641639:
+	{
+		engineConfiguration->fuelPumpPwmFrequency = (int)value;
+		return 1;
+	}
+		case -1648021571:
+	{
+		engineConfiguration->fuelPumpMinDuty = (int)value;
+		return 1;
+	}
+		case -1949245505:
+	{
+		engineConfiguration->fuelPumpMaxDuty = (int)value;
+		return 1;
+	}
+		case 84173873:
+	{
+		engineConfiguration->fuelPumpControl.pFactor = value;
+		return 1;
+	}
+		case -366167318:
+	{
+		engineConfiguration->fuelPumpControl.iFactor = value;
+		return 1;
+	}
+		case 1766427429:
+	{
+		engineConfiguration->fuelPumpControl.dFactor = value;
+		return 1;
+	}
+		case -1077592247:
+	{
+		engineConfiguration->fuelPumpControl.offset = (int)value;
+		return 1;
+	}
+		case -2136471963:
+	{
+		engineConfiguration->fuelPumpControl.periodMs = (int)value;
+		return 1;
+	}
+		case -413496189:
+	{
+		engineConfiguration->fuelPumpControl.minValue = (int)value;
+		return 1;
+	}
+		case -1763951419:
+	{
+		engineConfiguration->fuelPumpControl.maxValue = (int)value;
+		return 1;
+	}
+		case -1795541801:
+	{
+		engineConfiguration->fuelPump_iTermMin = (int)value;
+		return 1;
+	}
+		case -1795542055:
+	{
+		engineConfiguration->fuelPump_iTermMax = (int)value;
+		return 1;
+	}
+		case 668125882:
+	{
+		engineConfiguration->fuelPumpAggressiveRelief = (int)value;
+		return 1;
+	}
+		case -2119617526:
+	{
+		engineConfiguration->fuelPumpReliefMaxInjectedMass = (int)value;
+		return 1;
+	}
+		case -1292368058:
+	{
+		engineConfiguration->fuelPumpReliefEngageOverpressure = (int)value;
+		return 1;
+	}
+		case -1248973931:
+	{
+		engineConfiguration->fuelPumpReliefRecoverOverpressure = (int)value;
 		return 1;
 	}
 		case -1658957891:
