@@ -592,7 +592,7 @@
          1050
 </constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">20261021</constant>
+        <constant digits="0" name="calibrationBirthday" units="">20261022</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -4051,6 +4051,26 @@
          0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
 </constant>
         <constant name="targetAfrBlends2_yAxisOverride">"Zero"</constant>
+        <constant cols="8" digits="2" name="targetMixtureAdder1Display" rows="8" units="{useLambdaOnInterface ? &quot;lambda&quot; : &quot;AFR (gasoline scale)&quot;}">
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+</constant>
+        <constant cols="8" digits="2" name="targetMixtureAdder2Display" rows="8" units="{useLambdaOnInterface ? &quot;lambda&quot; : &quot;AFR (gasoline scale)&quot;}">
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+</constant>
         <constant digits="3" name="tChargeAirCoefMax" units="">0.902</constant>
         <constant digits="3" name="tChargeAirCoefMin" units="">0.098</constant>
         <constant digits="1" name="tChargeAirDecrLimit" units="deg/sec">12.5</constant>
@@ -5521,8 +5541,8 @@
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20261020" nPages="1" signature="rusEFI main.2026.10.21.mega100.4129407200" version="5.0"/>
-    <bibliography author="rusEFI 20261020" writeDate="date"/>
+    <versionInfo firmwareInfo="20261021" nPages="1" signature="rusEFI main.2026.10.22.mega100.1341689157" version="5.0"/>
+    <bibliography author="rusEFI 20261021" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
