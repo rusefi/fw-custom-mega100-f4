@@ -810,8 +810,8 @@
 #define GAUGE_NAME_FUEL_TEMPERATURE "Fuel Temperature"
 #define GAUGE_NAME_FUEL_TPS_EXTRA "Fuel: TPS AE (ms or fraction)"
 #define GAUGE_NAME_FUEL_VE "Fuel: VE"
-#define GAUGE_NAME_FUEL_WALL_AMOUNT "Fuel: wall amount"
-#define GAUGE_NAME_FUEL_WALL_CORRECTION "Fuel: wall correction"
+#define GAUGE_NAME_FUEL_WALL_AMOUNT "Fuel Wall: amount"
+#define GAUGE_NAME_FUEL_WALL_CORRECTION "Fuel Wall: correction"
 #define GAUGE_NAME_FW_VERSION "ECU: Software Version"
 #define GAUGE_NAME_GEAR_RATIO "Gearbox Ratio"
 #define GAUGE_NAME_GYRO_YAW "Gyro: Yaw rate"
@@ -891,6 +891,8 @@
 #define GAUGE_NAME_WG_POSITION "Wastegate position sensor"
 #define GAUGE_PRECISION_TEMPERATURE_C 1
 #define GAUGE_PRECISION_TEMPERATURE_F 2
+#define GAUGE_S16_TENTHS_MAX 3276.7
+#define GAUGE_S16_TENTHS_MIN -3276.8
 #define GAUGES_DECLARATIONS_FILE "tunerstudio/gauge_declarations.ini"
 #define gear_controller_e_enum "None", "Button Shift", "Automatic", "Generic"
 #define GEAR_DETECTION_DIALOG_NAME "Gear Detection"
@@ -1393,7 +1395,7 @@
 #define imu_type_e_IMU_TYPE_4 4
 #define imu_type_e_IMU_TYPE_MB_A0065422618 5
 #define imu_type_e_IMU_VAG 1
-#define INDICATOR_NAME_AC_SWITCH "AC switch"
+#define INDICATOR_NAME_AC_SWITCH "AC: switch"
 #define INDICATOR_NAME_BRAKE_DOWN "Brake switch"
 #define INDICATOR_NAME_CLUTCH_DOWN "Clutch: down"
 #define INDICATOR_NAME_CLUTCH_UP "Clutch: up"
@@ -1680,7 +1682,7 @@
 #define show_default_engine_type false
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 4129407200
+#define SIGNATURE_HASH 1341689157
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -2346,7 +2348,7 @@
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
 #define ts_show_wot_enrichment true
-#define TS_SIGNATURE "rusEFI main.2026.10.21.mega100.4129407200"
+#define TS_SIGNATURE "rusEFI main.2026.10.22.mega100.1341689157"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
